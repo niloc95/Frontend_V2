@@ -1,0 +1,53 @@
+.navlinks-hover::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .navlinks-hover:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .navlinks-hover::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(51, 97%, 46%, 0.85);
+    z-index: -1;
+    transition: transform .3s ease;
+    margin-left: -5px;
+    margin-right: -5px;
+    border-radius: 2px;
+  }
+  
+  .navlinks-hover{
+    position: relative;
+  }
+  
+  @media (orientation: landscape) {
+    .navlinks-hover {
+      grid-auto-flow: column;
+    }
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeInDown 0.5s;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  
+  @keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }

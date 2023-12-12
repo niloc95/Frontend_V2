@@ -1,0 +1,511 @@
+/* Master Sytle Sheets */
+/* Font */
+@font-face{
+  font-family: 'Blinker-Black-900';
+  src: url('../fonts/Blinker-Black.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-ExtraBold-800';
+  src: url('../fonts/Blinker-ExtraBold.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-Bold-700';
+  src: url('../fonts/Blinker-Bold.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-SemiBold-600';
+  src: url('../fonts/Blinker-SemiBold.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-Headline-500';
+  src: url('../fonts/Blinker-Headline.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-Regular-400';
+  src: url('../fonts/Blinker-Regular.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-Light-300';
+  src: url('../fonts/Blinker-Light.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-ExtraLight-200';
+  src: url('../fonts/Blinker-ExtraLight.woff2') format('woff2'),
+}
+
+@font-face{
+  font-family: 'Blinker-Thin-100';
+  src: url('../fonts/Blinker-Thin.woff2') format('woff2'),
+}
+
+/* Root color scheme */
+
+:root {
+  --frontend-yellow: #FFC436;   
+  --frontend-lite-grey: #bdbdbd;     
+  --frontend-dark-grey: #363636;     
+  --frontend-lite-green: #419197;
+  --frontend-purple: #793FDF;
+  --frontend-burnt-orange: #E25E3E;
+  --frontend-dark-navy: #071952;
+  --frontend-green: #12486B;
+  --frontend-white: #FFF;
+  
+}
+
+
+.headings-h1 {
+  font-family: 'Blinker-Regular-400', sans-serif;
+  font-size: clamp(1.5rem, -0.258rem + 5.625vw, 3.75rem);
+  color: #fff;
+  line-height: 60px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+}
+
+.headings-h2 {
+  font-family: 'Blinker-Regular-400', sans-serif;
+  font-size: clamp(1rem, 0.674rem + 1.159vw, 1.5rem);
+  color: #fff;
+  line-height: 30px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+}
+
+
+@media (max-width: 768px) {
+  .headings-h1 {
+    line-height: 30px; /* Change this to your desired mobile border width */
+  }
+}
+
+.sub-heading-p {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(0.75rem, 0.505rem + 0.87vw, 1.125rem);
+  letter-spacing: 0px;
+  line-height: 20px;
+  color: #fff;
+  
+}
+
+.sub-heading_p700 {
+  font-family: 'Blinker-Regular-400', sans-serif;
+  font-size: clamp(1rem, 0.0217rem + 3.4783vw, 2.5rem);
+  letter-spacing: 0px;
+  line-height: 40px;
+  color: #fff;
+  
+}
+
+.sub-heading-p2 {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.609rem + 1.25vw, 1.5rem);
+  letter-spacing: 0px;
+  line-height: 20px;
+  color: #000;
+  
+}
+
+.career-date {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(0.75rem, 0.652rem + 0.313vw, 0.875rem);
+  letter-spacing: 0px;
+  line-height: 20px;
+  color: #000; 
+}
+
+.showcase-tags{
+  color: var(--frontend-burnt-orange);
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.902rem + 0.313vw, 1.125rem); 
+  margin-left: 5px;
+}
+
+
+
+.logo-type {
+  position: relative;
+  text-transform: capitalize;
+  font-family: 'Blinker-SemiBold-600', sans-serif;
+  font-size: clamp(1.375rem, 0.967rem + 1.449vw, 2rem);
+  letter-spacing: -1px;
+  line-height: 0px;
+  color: hsl(0, 0%, 100%);
+  
+}
+
+.logo-type-sub-type {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(0.75rem, 0.668rem + 0.29vw, 0.875rem);
+  letter-spacing: 0px;
+  color: #fff;
+  
+}
+
+.test-border{
+  border: 5px solid #000;
+}
+
+.card-body {
+  border: 0px;
+}
+
+@media (max-width: 768px) {
+  /* Set the button's width to 100% on screens with a max width of 768px (adjust this breakpoint as needed) */
+  .card-body {
+    padding: 0px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Set the button's width to 100% on screens with a max width of 768px (adjust this breakpoint as needed) */
+  .list-group-item {
+    padding: 0px;
+    width: 100%;
+  }
+}
+
+.navlinks-type {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.918rem + 0.29vw, 1.125rem);
+  color: #fff;
+}
+
+.icon-fav {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(0.75rem, 0.668rem + 0.29vw, 0.875rem);
+  color: #FFC436;
+  letter-spacing: -1px;
+}
+
+.paragragh-text {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.918rem + 0.29vw, 1.125rem);
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  color: #262626;
+  
+}
+
+.paragragh_text_white {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.918rem + 0.29vw, 1.125rem);
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  word-wrap: break-word;
+}
+
+a:link {
+  text-decoration: none;
+  color: none;
+}
+
+.my-yellow{
+  color: var(--frontend-yellow);
+}
+
+.my-grey{
+  color: var(--frontend-dark-grey);
+}
+
+.bi-icon{
+  padding: 0px 15px 0px 0px;
+  color: var(--frontend-yellow);
+}
+
+.bi-icon-career{
+  padding: 0px 0px 0px 0px;
+  color: var(--frontend-burnt-orange);
+}
+
+.bi-icon-burnt_orange{
+  padding: 0px 15px 0px 0px;
+  color: var(--frontend-burnt-orange);
+}
+
+.bi-icon-purple{
+  padding: 0px 15px 0px 0px;
+  color: var(--frontend-purple);
+}
+
+.bi-icon-green{
+  padding: 0px 15px 0px 0px;
+  color: var(--frontend-green);
+}
+
+.bi-icon-lite-green{
+  padding: 0px 15px 0px 0px;
+  color: var(--frontend-lite-green);
+}
+
+.bi-icon-dark-navy{
+  padding: 0px 15px 0px 0px;
+  color: var(--frontend-dark-navy);
+}
+
+
+/* .sub-heading-p3 {
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(0.75rem, 0.586rem + 0.658vw, 1.375rem);
+  color: #ececec;
+} */
+
+
+/* Custom CSS */
+body::before {
+  display: block;
+  content: '';
+  height: 0px;
+  background-color: #E25E3E;
+}
+  
+.section-padding {
+  padding-top: 100px;
+}
+
+.section-padding-top {
+  padding-bottom: 25px;
+}
+
+.btn{
+  border-radius: 0px;
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.918rem + 0.29vw, 1.125rem);
+  letter-spacing: 0.5px;
+  line-height: 30px;
+}
+
+.btn:hover{
+  border-radius: 0px;
+  font-family: 'Blinker-Light-300', sans-serif;
+  font-size: clamp(1rem, 0.918rem + 0.29vw, 1.125rem);
+  letter-spacing: 0.5px;
+  line-height: 30px;
+
+}
+
+@media (max-width: 768px) {
+  /* Set the button's width to 100% on screens with a max width of 768px (adjust this breakpoint as needed) */
+  .btn-full-width {
+    width: 100%;
+  }
+}
+
+@media (min-width: 767px) {
+  /* Set the button's width to 100% on screens with a max width of 768px (adjust this breakpoint as needed) */
+  .btn-full-width {
+    width: 100%;
+  }
+}
+
+
+.br { 
+  display: block; 
+  margin-top: 0em; 
+} 
+
+.br-para { 
+  display: block;
+  padding-top: 5px; 
+}
+
+.frame-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border: 50px solid #fff;
+  padding: 20px;
+  background-image: url("../images/Johannesburg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+@media (max-width: 768px) {
+  .frame-section {
+    border-width: 15px; /* Change this to your desired mobile border width */
+  }
+}
+
+.frame-section-text {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  border: 50px solid #fff;
+  padding: 20px;
+  color: #000;
+  
+  
+}
+
+@media (max-width: 768px) {
+  .frame-section-text {
+    padding: 0px;
+    height: 60vh;
+    border-width: 15px; /* Change this to your desired mobile border width */
+  }
+}
+
+.frame-section-about {
+  display: flex; /* Use flexbox to align content vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  position: relative;
+  width: 100%;
+  border: 50px solid #fff;
+  padding: 20px;
+  padding-bottom: 0px;
+  background-color: #f8f8f8;
+}
+
+@media (max-width: 768px) {
+  .frame-section-about {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    border-width: 15px; /* Change this to your desired mobile border width */
+  }
+}
+
+.frame-section-acc {
+  display: flex; /* Use flexbox to align content vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  border-top: 0px solid #fff;
+  border-bottom: 50px solid #fff;
+  border-left: 50px solid #fff;
+  border-right: 50px solid #fff;
+  padding: 20px;
+  background-color: #f8f8f8;
+  
+}
+
+@media (max-width: 768px) {
+  .frame-section-acc {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-width: 5px; /* Change this to your desired mobile border width */
+  }
+}
+
+.footer-padding{
+  display: flex; /* Use flexbox to align content vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+@media (max-width: 768px) {
+  .footer-padding {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    border-width: 15px; /* Change this to your desired mobile border width */
+  }
+}
+
+.list-group-item{
+  border: 0px;
+}
+
+.bg-image {
+  background-image: url("../images/nilo_about_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
+.bg-footer {
+  background-color: rgba(41,41,41,0.44);
+}
+
+.hero-nilo {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust this to your desired height */
+    overflow: hidden;
+    
+  }
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #fff;
+  margin-left: 68px;
+     
+}
+
+.hero-text-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #fff; 
+  margin-left: 70px;
+  padding-right: 50%;
+}
+
+.hero-text-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #fff; 
+  margin-left: 70px;
+  padding-right: 50%;
+}
+
+@media (max-width: 768px) {
+  .hero-text-home {
+    margin-left: 30px;
+    padding-right: 25px; /* Change this to your desired mobile border width */
+  }
+}
+
+.heading-padding {
+  margin-left: 70px;
+  margin-right: 70px; 
+}
+
+@media (max-width: 768px) {
+  .heading-padding {
+    margin-left: 30px;
+    margin-right: 30px; /* Change this to your desired mobile border width */
+  }
+}
+
+.bg-img-hero {
+    background: url("../images/Johannesburg.webp") rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+.bottom-right-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  margin: 20px; /* Adjust this value to control the distance from the corner */
+}

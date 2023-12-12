@@ -1,0 +1,178 @@
+
+.custom-graphic-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+}
+
+.custom-card-container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+
+.custom-card {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    background: linear-gradient(0deg, rgba(0,0,0,.6) 20%, rgba(0,0,0,.4) 100%), var(--custom-card-bg-img), url();
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding: 5vw;
+    transition: all 1s;
+    z-index: 2;
+    font-family: EYInterstate, 'EYInterstate', sans-serif;
+    color: #fff;
+}
+
+.custom-card .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ffe600;
+    border: none;
+}
+
+.custom-card h3 {
+    font-family: Georgia,serif;
+    font-weight: 500;
+    font-size: 1.75em;
+    line-height: 1.2;
+    margin: .25em 0 .25em 0;
+}
+
+.custom-card p {
+    font-family: EYInterstate, 'EYInterstate', sans-serif;
+    font-weight: 300;
+    font-size: .95em;
+    line-height: 1.4;
+    margin: 0 0 .75em 0;
+}
+
+.custom-card a {
+    font-family: EYInterstate, 'EYInterstate', sans-serif;
+    font-weight: 500;
+    font-size: .95em;
+    line-height: 1.4;
+    margin: 0 0 .75em 0;
+    color: #ffffff;
+}
+
+.custom-card-button-container {
+    display: none;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .custom-graphic-container {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    z-index: 1;
+}
+.custom-card-container {
+    z-index: 2;
+}
+    .custom-card {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        padding: 5vw 25% 5vw 5vw;
+        top: 0;
+        left: 100%;
+        display: none;
+        transition: all 1s;
+        z-index: 2;
+    }
+
+    .custom-card.active {
+        top: 0;
+        left: 0;
+        display: block;
+    }
+
+    .custom-card .icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .custom-card h3 {
+        font-size: 40px;
+    }
+
+    .custom-card p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .custom-card-button-container {
+        width: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+        padding: 0vw 5vw;
+    }
+
+    .custom-card-button {
+        width: calc(100% / 4);
+        box-sizing: border-box;
+        display: inline-block;
+        border: 0;
+        padding: 20px;
+        font-family: EYInterstate, 'EYInterstate', sans-serif;
+        font-weight: 500;
+        font-size: 1em;
+        color: #ffffff;
+        border-top: 4px solid #ffe60000;
+        transition: all .5s;
+        cursor: pointer;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .custom-card-button:hover,
+    .custom-card-button.active {
+        border-top: 4px solid #ffe600;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .35) 100%);
+    }
+}
+
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1400px) {
+    .custom-card {
+        padding: 5vw 50% 5vw 5vw;
+    }
+}
+ /* Large devices (desktops, 1200px and up) */
+ @media (max-height: 590px) {
+    .custom-graphic-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+}
+    .custom-card {
+        position: relative;
+        display: block;
+        padding: 5vw;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+    .custom-card-button-container {
+    display: none;
+}
+}

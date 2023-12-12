@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+
+
+
+<section id="hero-section" class="hero-nilo">
+    <video autoplay loop muted playsinline><source src="{% static 'images/Landing_page.mp4' %}"></video>
+    <div class="container-fluid hero-text-form">
+        <h2>Contact Us</h2>
+        
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-outline-light btn-lg" type="submit">Contact me</button>
+            </form>
+    </div>
+    
+    <div class="bottom-right-text">
+      <p class="sub-heading-p">Engineered with Django and Bootstrap <a href="https://github.com/niloc95/Frontend" target="blank" alt="Nilo Cara - Software Engineer"><i class="bi bi-github"></i></a></p>
+    </div>
+  </section>
+
+  
+
+  
+
+{%  endblock content%}
