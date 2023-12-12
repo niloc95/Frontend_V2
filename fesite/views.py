@@ -18,7 +18,7 @@ def home(request, id=None):
         return render(request, 'pages/home.html', {'id': id })
         
 def home(request):
-    return render(request,'pages/home.html',{'home_hero_h1': 'Technology Simplified', 'home_hero_p':'An Innovative IT Solutions Agency','home_hero_p2': '#Cloud Migratation, #Data Management, Networking, #Hardware'})
+    return render(request,'pages/home.html',{'home_hero_h1': 'Technology Simplified', 'home_hero_p':'An Innovative IT Solutions Agency','home_hero_p2': '#Cloud Migratation, #Data Management, Networking, #Hardware', 'Section2_P1': "Throughout my diverse journey, I've consistently sought meaningful opportunities and embraced challenges. From owning a small business to being recognized as Employee of the Year at Gijima, earning a Service Excellence merit at SouthernSun, and achieving top rank at Stellenbosch University's Software Engineering Bootcamp, my dedication to problem-solving and helping others has remained unwavering. With over 15 years in the tech industry, I transitioned from a junior support analyst to a Group Operations Manager at Standard Bank Group before taking a hiatus in 2017 for a personal project. Returning in 2019 as a freelance software developer, I've honed expertise in Python, JavaScript, HTML, CSS, MySQL, AWS, and continue to explore new frameworks and languages. I excel as a well-rounded front-end developer using JavaScript and web development tools, occasionally delving into backend solutions with Node or Python, and have recently joined Hyperion Dev with Stellenbosch University and Harvard University's CS50 to further advance my career as a software engineer."})
 
 def contact(request):
     if request.method == 'POST':

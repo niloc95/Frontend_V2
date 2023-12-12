@@ -4,7 +4,6 @@ chromedriver
 images/
 asgi.py
 wsgi.py
-.env
 
 Byte-compiled / optimized / DLL files
 __pycache__/
