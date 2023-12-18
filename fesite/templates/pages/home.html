@@ -13,7 +13,9 @@
     <h1 class="headings-h1">{{home_hero_h1}}<span> 👋</span></h1>
     <p class="sub-heading_p700">{{home_hero_p}}</p><p class='sub-heading-p'> {{home_hero_p2}} </p>
     {% comment %} <a href="{% url 'send_email' %}"> {% endcomment %}
-      <button class="btn btn-outline-light btn-lg">Contact me</button>
+      <a href="{% url 'contact' %}">
+        <button class="btn btn-outline-light btn-lg">Contact</button>
+      </a>
   </div>
   <div class="bottom-right-text">
     <p class="sub-heading-p">Engineered with Django and Bootstrap <a href="https://github.com/niloc95/Frontend" target="blank" alt="Nilo Cara - Software Engineer"><i class="bi bi-github"></i></a></p>
