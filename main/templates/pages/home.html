@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ {% comment %} <!-- Hero Section --> {% endcomment %}
+
+  <section id="hero">
+    <div class="min-h-screen flex items-center justify-center bg-blue-500 text-white bg-image">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Welcome to Frontend Software Engineering</h1>
+        <p class="text-lg">Explore and enjoy the content we have for you!</p>
+        <button class="mt-6 px-4 py-2 bg-white text-blue-500 rounded-full">Get Started</button>
+      </div>
+    </div>
+ </section>
+
+<!-- <section id="hero-section" class="hero-nilo">
+  
+  <video autoplay loop muted playsinline><source src="{% static 'images/Landing_page.mp4' %}"></video>
+  <div class="container-fluid hero-text-home">
+    <h1 class="headings-h1">{{home_hero_h1}}<span> 👋</span></h1>
+    <p class="sub-heading_p700">{{home_hero_p}}</p><p class='sub-heading-p'> {{home_hero_p2}} </p>
+    {% comment %} <a href="{% url 'send_email' %}"> {% endcomment %}
+      <a href="{% url 'contact' %}">
+        <button class="btn btn-outline-light btn-lg">Contact</button>
+      </a>
+  </div>
+  <div class="bottom-right-text">
+    <p class="sub-heading-p">Engineered with Django and Bootstrap <a href="https://github.com/niloc95/Frontend" target="blank" alt="Nilo Cara - Software Engineer"><i class="bi bi-github"></i></a></p>
+  </div>
+</section> -->
+<!-- End Hero Section -->
+
+
+
+{% endblock content%}
+
+
+

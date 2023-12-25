@@ -1,0 +1,57 @@
+{% load static %}
+
+<!-- Navbar -->
+<nav class="bg-gray-500 p-4 fixed top-0 w-full">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Brand/logo -->
+        <a href="{% url 'home' %}">
+            <span class="logo-type">{{logo}} </span>
+            <span class="icon-fav">{{logo_favicon}}</span>
+            <span class="logo-type-sub-type br">{{logo_sub_title}}</span>
+        </a>
+
+        <!-- Mobile menu button (hidden on desktop) -->
+        <div class="lg:hidden">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Desktop menu (hidden on mobile) -->
+        <div class="hidden lg:flex space-x-4 items-center">
+            <a href="#" class="navlinks-hover navlinks-type">Our Experience</a>
+            <a href="#" class="navlinks-hover navlinks-type">Professional Services</a>
+            <a href="#" class="navlinks-hover navlinks-type">Blog</a>
+            <a href="#" class="navlinks-hover navlinks-type">Contact</a>
+            <a href="#" class="navlinks-hover navlinks-type">About</a>
+        </div>
+    </div>
+
+    <div id="mobile-menu"
+    class="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur z-50 hidden">
+    <div class="flex flex-col items-start">
+        <div class="p-4">
+            <button id="close-menu" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Work Experience</a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Professional Services</a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Blog</a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Contact</a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">About</a>
+    </div>
+</div>
+</nav>
+
+<!-- Mobile menu (hidden on desktop) -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+<script type="text/javascript" src="{% static '/js/tailwind.js' %}"></script>

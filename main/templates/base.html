@@ -1,0 +1,48 @@
+{% load static %}
+{% load django_browser_reload %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ----------------------------------------------------------------------------
+  * @Website     Django and Bootstrap Website -  Personal Site 
+  * @framework   Django - High-level Python web framework with Bootstrap5 and Crispy Forms
+  * @author      Nilo Cara 
+  * @copyright   Copyright (c) 2023, Nilo Cara
+  * @link        https://niloc95.github.io/niloc95
+  * @since       v1.0
+  * ---------------------------------------------------------------------------- -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TRXL4Y5B5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3TRXL4Y5B5');
+    </script>
+    <title>{% block title %}Frontend Software Engineering{% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static '/images/Fe-logo-white.png' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/fesite_ui.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/hero_section.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/form.css' %}">
+    
+    
+  </head>
+  <body>
+   
+    {% include 'navbar.html' %}
+   
+    
+    {% block content %}
+    
+    {% endblock %}  
+    
+  </body>
+  
+  
+  
+  
+</html>
