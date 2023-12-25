@@ -1,12 +1,61 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/logo.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static '/css/nav.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}"/>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+  <div class="container-fluid heading-padding">
+      <a class="navbar-brand" href="{% url 'home' %}"><span class="logo-type">frontend </span><span class="icon-fav">Fe.<span><span class="logo-type-sub-type br"> Software Engineering</span></a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            {% comment %} <a class="nav-link active" aria-current="page" href="{% url 'bookings' %}">Bookings</a> {% endcomment %}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navlinks-type navlinks-hover" href="{% url 'about' %}#career">Work Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navlinks-type navlinks-hover" href="{% url 'home' %}#my_projects">Professional Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navlinks-type navlinks-hover" href="{% url 'home' %}#my_projects">Insights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navlinks-type navlinks-hover" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            {% comment %} <a class="nav-link" href="{% url 'contact' %}">Contact</a> {% endcomment %}
+          </li>
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+          </li> {% endcomment %}
+          {% comment %} <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> {% endcomment %}
+          {% comment %} <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>{% endcomment %}
+        </ul> 
+        {% comment %} <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> {% endcomment %}
+      </div>
+    </div>
+  </nav>
 
- 
 
-
-{% comment %} <!-- Hero Section --> {% endcomment %}
-<section id="hero-section" class="hero-nilo">
+  <!-- <section id="hero-section" class="hero-nilo">
   
   <video autoplay loop muted playsinline><source src="{% static 'images/Landing_page.mp4' %}"></video>
   <div class="container-fluid hero-text-home">
@@ -20,20 +69,17 @@
   <div class="bottom-right-text">
     <p class="sub-heading-p">Engineered with Django and Bootstrap <a href="https://github.com/niloc95/Frontend" target="blank" alt="Nilo Cara - Software Engineer"><i class="bi bi-github"></i></a></p>
   </div>
-</section>
+</section> -->
 {% comment %}<!-- End Hero Section -->{% endcomment %}
 
 
 
 
-<section id="aboutme" class="frame-section-about">
+<section id="aboutme">
   <div class="container-fluid">
     <div class="align-items-center justify-content-center d-md-flex">
       <div>
         <h2 class="headings-h1" style="color: black;">Me</h2>
-        {% comment %} <div>
-          <p class="paragragh-text"><strong>Current Focus:</strong> Python || Django || Frontend Engineering || Frontend Libraries</p>
-        </div> {% endcomment %}
         <p class="paragragh-text">{{Section2_P1}}</p>
         {% comment %} <p class="paragragh-text">Being a web developer, I find immense satisfaction in harnessing my meticulous attention to detail, unwavering passion for creation, and a resolute commitment to my mission to actively contribute to global transformation. This is precisely why I am eagerly looking forward to making a substantial mark within a rapidly expanding organization.</p> {% endcomment %}
         <div>
@@ -48,16 +94,6 @@
   {% comment %} <!-- End Anchor point for Accordion section--> {% endcomment %}
 </section>
 
-
-
-<section class="frame-section">
-  <div class="container hero-text">
-      <!-- Your content goes here -->
-      <h2>Me</h2>
-  <p>Throughout my journey, I've consistently pursued meaningful opportunities and embraced diverse challenges. From owning a small business and being recognized as Employee of the Year at Gijima to earning a Service Excellence merit at SouthernSun and achieving the top rank out of 115 students at Stellenbosch University's Software Engineering Bootcamp, my dedication to helping others and solving problems has remained unwavering.</p>
-  <p class="lead">Being a web developer, I find immense satisfaction in harnessing my meticulous attention to detail, unwavering passion for creation, and a resolute commitment to my mission to actively contribute to global transformation. This is precisely why I am eagerly looking forward to making a substantial mark within a rapidly expanding organization.</p>
-  </div>
-</section>
 
 
 {% comment %} <!-- Start FAQ Section Accordion --> {% endcomment %}
@@ -661,8 +697,3 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-{% endblock content%}
-
-
-

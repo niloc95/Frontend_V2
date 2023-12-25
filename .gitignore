@@ -4,6 +4,9 @@ chromedriver
 images/
 asgi.py
 wsgi.py
+node_modules/
+main/static/
+tailwind.config.js
 
 Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+
+<div class="container-form bg-dark ">
+  <div class="row align-items-center g-lg-5 py-5 mt-auto">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+      <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <!-- <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-light btn-lg" type="submit">Contact me</button>
+    </form> -->
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="">
+        {% csrf_token %}
+        {{ form.media }}
+        <div>
+          {{ form.name.label_tag }}
+          {{ form.name }}
+        </div>
+        <div>
+          {{ form.email.label_tag }}
+          {{ form.email }}
+        </div>
+        <div>
+          {{ form.phone_number.label_tag }}
+        {{ form.phone_number }}
+        </div>
+        <div>
+          {{ form.message.label_tag }}
+        {{ form.message }}
+        </div>
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Contact me</button>
+        <hr class="my-4">
+        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6" style="margin: 1rem 0 auto;">
+        <div class="card">
+          <div class="card-body">
+            <form method="post" action="">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class="btn btn-outline-light btn-lg" type="submit">Contact me</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section id="hero-section" class="hero-nilo">
+    <video autoplay loop muted playsinline><source src="{% static 'images/Landing_page.mp4' %}"></video>
+    <div class="container-fluid hero-text-form">
+        <h2>Contact Us</h2>
+        <div class="row">
+          <div class="col-md-6" >
+            <div class="">
+              <div class="">
+                <form method="post" action="">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button class="btn btn-outline-light btn-lg" type="submit">Contact me</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div> -->
+    
+    <div class="bottom-right-text">
+      <p class="sub-heading-p">Engineered with Django and Bootstrap <a href="https://github.com/niloc95/Frontend" target="blank" alt="Nilo Cara - Software Engineer"><i class="bi bi-github"></i></a></p>
+    </div>
+  </section>
+{%  endblock content%}

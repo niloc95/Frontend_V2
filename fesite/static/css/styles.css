@@ -60,6 +60,10 @@
   
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .headings-h1 {
   font-family: 'Blinker-Regular-400', sans-serif;
@@ -263,12 +267,7 @@ a:link {
 
 
 /* Custom CSS */
-body::before {
-  display: block;
-  content: '';
-  height: 0px;
-  background-color: #E25E3E;
-}
+
   
 .section-padding {
   padding-top: 100px;
@@ -403,6 +402,7 @@ body::before {
 
 .footer-padding{
   display: flex; /* Use flexbox to align content vertically */
+  
   justify-content: center; /* Center content horizontally */
   align-items: center;
   position: relative;
@@ -464,6 +464,13 @@ body::before {
   padding-right: 50%;
 }
 
+@media (max-width: 768px) {
+  .hero-text-home {
+    margin-left: 30px;
+    padding-right: 25px; /* Change this to your desired mobile border width */
+  }
+}
+
 .hero-text-form {
   position: absolute;
   top: 50%;
@@ -471,14 +478,22 @@ body::before {
   transform: translate(-50%, -50%);
   text-align: left;
   color: #fff; 
-  margin-left: 70px;
+  margin-left: 70px; 
   padding-right: 50%;
+  
 }
 
 @media (max-width: 768px) {
-  .hero-text-home {
-    margin-left: 30px;
-    padding-right: 25px; /* Change this to your desired mobile border width */
+  .hero-text-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: #fff; 
+    margin-left: 25px; 
+    padding-right: 15%;
+    
   }
 }
 
