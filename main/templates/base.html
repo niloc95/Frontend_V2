@@ -1,48 +1,35 @@
 {% load static %}
 {% load django_browser_reload %}
+
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- ----------------------------------------------------------------------------
-  * @Website     Django and Bootstrap Website -  Personal Site 
-  * @framework   Django - High-level Python web framework with Bootstrap5 and Crispy Forms
-  * @author      Nilo Cara 
-  * @copyright   Copyright (c) 2023, Nilo Cara
-  * @link        https://niloc95.github.io/niloc95
-  * @since       v1.0
-  * ---------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------
+    * @Website     Django and Tailwind Website - Company Site 
+    * @framework   Python Django web framework with Tailwindcss.
+    * @author      Frontend Software Engineering (Pty)Ltd
+    * @copyright   Copyright (c) 2023
+    * @contact     za_admin@frontend.co.za
+    * @since       v3.2
+    * ---------------------------------------------------------------------------- -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Google tag (gtag.js) -->
+    {% comment %} <!-- Google tag (gtag.js) --> {% endcomment %}    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TRXL4Y5B5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-3TRXL4Y5B5');
     </script>
     <title>{% block title %}Frontend Software Engineering{% endblock %}</title>
-    <link rel="shortcut icon" type="image/png" href="{% static '/images/Fe-logo-white.png' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static '/images/Fe-logo-white.png' %}" />
     <link rel="stylesheet" type="text/css" href="{% static '/css/fesite_ui.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/hero_section.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/form.css' %}">
-    
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
   </head>
   <body>
-   
     {% include 'navbar.html' %}
-   
-    
     {% block content %}
-    
-    {% endblock %}  
-    
+    {% endblock %}
   </body>
-  
-  
-  
-  
 </html>

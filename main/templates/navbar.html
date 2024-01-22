@@ -1,16 +1,17 @@
 {% load static %}
 
-<!-- Navbar -->
-<nav class="bg-gray-500 p-4 fixed top-0 w-full">
+{% comment %} <!-- Navbar --> {% endcomment %}
+
+<nav class="bg-transparent p-4 fixed top-0 w-full z1000">
     <div class="container mx-auto flex justify-between items-center">
-        <!-- Brand/logo -->
+        {% comment %} <!-- Brand/logo --> {% endcomment %}
+        
         <a href="{% url 'home' %}">
             <span class="logo-type">{{logo}} </span>
             <span class="icon-fav">{{logo_favicon}}</span>
             <span class="logo-type-sub-type br">{{logo_sub_title}}</span>
         </a>
-
-        <!-- Mobile menu button (hidden on desktop) -->
+        {% comment %} <!-- Mobile menu button (hidden on desktop) --> {% endcomment %}
         <div class="lg:hidden">
             <button id="menu-toggle" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -20,14 +21,13 @@
                 </svg>
             </button>
         </div>
-
-        <!-- Desktop menu (hidden on mobile) -->
+        {% comment %} <!-- Desktop menu (hidden on mobile) --> {% endcomment %}
         <div class="hidden lg:flex space-x-4 items-center">
-            <a href="#" class="navlinks-hover navlinks-type">Our Experience</a>
-            <a href="#" class="navlinks-hover navlinks-type">Professional Services</a>
-            <a href="#" class="navlinks-hover navlinks-type">Blog</a>
+            <a href="#" class="navlinks-hover navlinks-type"></a>
+            <a href="#" class="navlinks-hover navlinks-type"></a>
+            <a href="#" class="navlinks-hover navlinks-type"></a>
             <a href="#" class="navlinks-hover navlinks-type">Contact</a>
-            <a href="#" class="navlinks-hover navlinks-type">About</a>
+            <a href="#" class="navlinks-hover navlinks-type"></a>
         </div>
     </div>
 
@@ -51,7 +51,7 @@
     </div>
 </div>
 </nav>
+{% comment %} <!-- Mobile menu (hidden on desktop) --> {% endcomment %}
 
-<!-- Mobile menu (hidden on desktop) -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 <script type="text/javascript" src="{% static '/js/tailwind.js' %}"></script>

@@ -1,39 +1,104 @@
 {% extends 'base.html' %}
+{% block title %}Our Mission - Enabling Technology | FSE{% endblock %}
 {% load static %}
 {% block content %}
-
- {% comment %} <!-- Hero Section --> {% endcomment %}
-
-  <section id="hero">
-    <div class="min-h-screen flex items-center justify-center bg-blue-500 text-white bg-image">
-      <div class="text-center">
-        <h1 class="text-4xl font-bold mb-4">Welcome to Frontend Software Engineering</h1>
-        <p class="text-lg">Explore and enjoy the content we have for you!</p>
-        <button class="mt-6 px-4 py-2 bg-white text-blue-500 rounded-full">Get Started</button>
+{% include 'pages/seo_scripts/seo_default.html'%}
+{% comment %} <!-- Hero Section --> {% endcomment %}
+<section id="home-hero-section" class="bg-image bg-fixed p-4">
+  <div class="min-h-screen flex items-center justify-start text-white">
+    <div class="container mx-auto text-left">
+      <div class="flex items-center mb-4">
+        <h1 class="text-4xl headings-h1 leading-normal">{{ home_hero_h1 }}</h1>
+      </div>
+      <p class="text-white text-4xl webdev-h2 leading-tight">{{ home_hero_p2 }} </p>
+      <button class="mt-6 px-4 py-2 bg-white text-blue-500">Get Started</button>
+      <div id="made_by" class="absolute mx-auto bottom-0 right-[145px]">
+        <p class="sub-heading-p">
+          Engineered with Django and TailwindCSS
+          <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
+            <i class="bi bi-github"></i>
+          </a>
+        </p>
       </div>
     </div>
- </section>
+  </div>
+</section>
+{% comment %} <!-- End Hero Section --> {% endcomment %}
 
-<!-- <section id="hero-section" class="hero-nilo">
-  
-  <video autoplay loop muted playsinline><source src="{% static 'images/Landing_page.mp4' %}"></video>
-  <div class="container-fluid hero-text-home">
-    <h1 class="headings-h1">{{home_hero_h1}}<span> 👋</span></h1>
-    <p class="sub-heading_p700">{{home_hero_p}}</p><p class='sub-heading-p'> {{home_hero_p2}} </p>
-    {% comment %} <a href="{% url 'send_email' %}"> {% endcomment %}
-      <a href="{% url 'contact' %}">
-        <button class="btn btn-outline-light btn-lg">Contact</button>
-      </a>
+<section id="webdev" class="border-25">
+  <div class="min-h-screen p-4 relative flex items-center justify-start text-white ">
+    <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover ">
+      <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="container mx-auto relative">
+      <div class="grid md:grid-cols-2 gap-20 text-left">
+        <H1 class="text-white text-4xl webdev-h2 leading-tight">{{ webdev_banner_headline }}</H1>
+        <H1 class="text-white text-2xl webdev-h2 leading-tight">{{ webdev_banner_tags }}</H1>
+      </div>
+      
+    </div>
   </div>
-  <div class="bottom-right-text">
-    <p class="sub-heading-p">Engineered with Django and Bootstrap <a href="https://github.com/niloc95/Frontend" target="blank" alt="Nilo Cara - Software Engineer"><i class="bi bi-github"></i></a></p>
+</section>
+
+{% comment %} <!-- Logo Carousel animation --> {% endcomment %}
+ 
+ <section class="border-25 ">
+  <div class="flex items-center justify-start">
+  <div class="container mx-auto relative">
+    <h2 class="text-left text-2xl leading-tight p-4">Our Business Relationships</h2>
+    <h2 class="text-left text-4xl headings-h1 text-slate-900 leading-tight">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
+    <div class="relative flex flex-col justify-center bg-white overflow-hidden">
+      <div class="w-full  mx-auto px-4 md:px-6 p-24">
+          <div class="text-center">
+              <div
+                  x-data="{}"
+                  x-init="$nextTick(() => {
+                      let ul = $refs.logos;
+                      ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                      ul.nextSibling.setAttribute('aria-hidden', 'true');
+                  })"
+                  class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+              >
+                  <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                      <li>
+                          <a href="https://flume.co.za/"><img style="height:55px"src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" /></a>
+                      </li>
+                      <li>
+                        <img style="height:55px"src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" />
+                      </li>
+                      <li>
+                        <img style="height:55px"src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" />
+                      </li>
+                      <li>
+                        <img style="height:55px"src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" />
+                      </li>
+                      <li>
+                        <img style="height:55px"src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" />
+                      </li>
+                      <li>
+                        <img style="height:55px"src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" />
+                      </li>
+                      <li>
+                        <img style="height:15px"src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" />
+                      </li>
+                      <li>
+                        <img style="height:45px"src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" />
+                      </li>
+                      <li>
+                        <img style="height:45px"src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" />
+                      </li>
+                  </ul>                
+              </div>
+          </div>
+      </div>
+    </div>
   </div>
-</section> -->
-<!-- End Hero Section -->
+</div>
+</section>
+{% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
+
 
 
 
 {% endblock content%}
-
-
-
