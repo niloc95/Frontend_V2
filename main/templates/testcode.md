@@ -697,3 +697,87 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+
+
+<section class="bg-gray-50 dark:bg-gray-700">
+  <div class="flex z-20 flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+          <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+          Flowbite    
+      </a>
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  Contact Us
+              </h1>
+              <form class="space-y-4 md:space-y-6" action="#">
+                  <div>
+                      <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+                      {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name Please" required=""%}
+                  </div>
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                      {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""%}
+                  </div>
+                  <div>
+                    <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                    {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="Phone Number" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True"%}
+                </div>
+                  
+                  <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send</button>
+                  
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+
+
+<div class="container-form bg-dark ">
+  <div class="row align-items-center g-lg-5 py-5 mt-auto">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+      <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <!-- <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-light btn-lg" type="submit">Contact me</button>
+    </form> -->
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="">
+        {% csrf_token %}
+        {{ form.media }}
+        <div>
+          {{ form.name.label_tag }}
+          {{ form.name }}
+        </div>
+        <div>
+          {{ form.email.label_tag }}
+          {{ form.email }}
+        </div>
+        <div>
+          {{ form.phone_number.label_tag }}
+        {{ form.phone_number }}
+        </div>
+        <div>
+          {{ form.message.label_tag }}
+        {{ form.message }}
+        </div>
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Contact me</button>
+        <hr class="my-4">
+        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    
+      </section>
+{%  endblock content%}

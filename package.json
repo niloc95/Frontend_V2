@@ -1,7 +1,8 @@
 {
 
   "scripts": {
-    "dev": "tailwind -i main/static/tw_input_css/tw-input.css -o main/static/css/fesite_ui.css --watch"
+    "dev": "tailwind -i main/static/tw_input_css/tw-input.css -o main/static/css/fesite_ui.css --watch",
+    "prod-build": "NODE_ENV=production npx tailwindcss -i main/static/tw_input_css/tw-input.css -o fesite/static/css/fesite_ui.css --minify"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
