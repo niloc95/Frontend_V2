@@ -133,4 +133,5 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Your SMTP email p
 #EMAIL_SUBJECT_PREFIX = '[Your App Name]'  # Optional prefix for email subjects
 COMPANY_CONTACT_NAME = 'Frontend Software Engineering'
 PERSONAL_CONTACT_NAME = 'Mark Jones'
+FROM_NAME = 'Nilo Cara'
 DEFAULT_FROM_EMAIL = 'Mark Jones'

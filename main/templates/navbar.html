@@ -2,7 +2,7 @@
 
 {% comment %} <!-- Navbar --> {% endcomment %}
 
-<nav class="bg-transparent p-4 fixed top-0 w-full z1000">
+<nav class="bg-transparent p-4 fixed top-0 w-full z-10">
     <div class="container mx-auto flex justify-between items-center">
         {% comment %} <!-- Brand/logo --> {% endcomment %}
         
@@ -22,17 +22,17 @@
             </button>
         </div>
         {% comment %} <!-- Desktop menu (hidden on mobile) --> {% endcomment %}
-        <div class="hidden lg:flex space-x-4 items-center">
+        <div class="hidden lg:flex space-x-4 items-center z1000">
+            <a href="/" class="navlinks-hover navlinks-type">Home</a>
+            <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Contact</a>
             <a href="#" class="navlinks-hover navlinks-type"></a>
-            <a href="#" class="navlinks-hover navlinks-type"></a>
-            <a href="#" class="navlinks-hover navlinks-type"></a>
-            <a href="#" class="navlinks-hover navlinks-type">Contact</a>
+            <a href="{% url 'home' %}#formH" class="navlinks-hover navlinks-type ">Contact</a>
             <a href="#" class="navlinks-hover navlinks-type"></a>
         </div>
     </div>
 
     <div id="mobile-menu"
-    class="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur z-50 hidden">
+    class="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur z-50 hidden z1000">
     <div class="flex flex-col items-start">
         <div class="p-4">
             <button id="close-menu" class="text-white focus:outline-none">
@@ -43,15 +43,16 @@
                 </svg>
             </button>
         </div>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Work Experience</a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Professional Services</a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Blog</a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">Contact</a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type">About</a>
+        <a href="{% url 'home' %}#contactForm_Home" class="navlinks-hover navlinks-type ">Contact</a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
+        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
     </div>
 </div>
 </nav>
 {% comment %} <!-- Mobile menu (hidden on desktop) --> {% endcomment %}
-
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 <script type="text/javascript" src="{% static '/js/tailwind.js' %}"></script>
+
