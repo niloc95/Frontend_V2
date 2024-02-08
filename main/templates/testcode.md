@@ -781,3 +781,24 @@
     
       </section>
 {%  endblock content%}
+
+
+<footer class="bg-light text-dark pt-2 font-monospace footer-padding">
+  <div class="container">
+    <div class="row justify-content-center"> <!-- Add justify-content-center class here -->
+      <div class="col-md-8">
+        <p>&copy; 2023 Nilo Cara: Designed & Coded <img width="25" height="25" src="https://img.icons8.com/color/48/python--v1.png" alt="python--v1"/>, <img width="25" height="25" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/25/external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-color-tal-revivo.png" alt="external-django-a-high-level-python-web-framework-that-encourages-rapid-development-logo-color-tal-revivo"/>, <img width="25" height="25" src="https://img.icons8.com/color/48/bootstrap--v2.png" alt="bootstrap--v2"/>, <img width="25" height="25" src="https://img.icons8.com/color/48/webpack.png" alt="webpack"/>, <img width="25" height="25" src="https://img.icons8.com/fluency/25/javascript.png" alt="javascript"/>, <img width="25" height="25" src="https://img.icons8.com/color/25/amazon-web-services.png" alt="amazon-web-services"/> ||
+          <a href="https://github.com/niloc95/my_django" target="blank" class="text-reset text-muted px-2">Source Code
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/nilo-cara/" class="me-4 text-reset">Connect 
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </p>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <p><a class="text-reset text-muted" href="#">Privacy Policy</a> || <a class="text-reset text-muted" href="#">Terms of Use</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

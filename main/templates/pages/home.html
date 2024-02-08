@@ -2,17 +2,18 @@
 {% block title %}Our Mission - Enabling Technology | FSE{% endblock %}
 {% load static %}
 {% block content %}
+{% load widget_tweaks %}
 {% include 'pages/seo_scripts/seo_default.html'%}
 {% comment %} <!-- Hero Section --> {% endcomment %}
-<section id="home-hero-section" class="bg-image bg-fixed p-4">
+<section id="home-hero-section" class="bg-image p-4">
   <div class="min-h-screen flex items-center justify-start text-white">
     <div class="container mx-auto text-left">
       <div class="flex items-center mb-4">
         <h1 class="text-4xl headings-h1 leading-normal">{{ home_hero_h1 }}</h1>
       </div>
       <p class="text-white text-4xl webdev-h2 leading-tight">{{ home_hero_p2 }} </p>
-      <button class="mt-6 px-4 py-2 bg-white text-blue-500">Get Started</button>
-      <div id="made_by" class="absolute mx-auto bottom-0 right-[145px]">
+      <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Lets Talk</a>
+      <div id="made_by" class="absolute mx-auto bottom-0">
         <p class="sub-heading-p">
           Engineered with Django and TailwindCSS
           <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
@@ -41,9 +42,9 @@
   </div>
 </section>
 
-{% comment %} <!-- Logo Carousel animation --> {% endcomment %}
+{% comment %} <!-- Logo Carousel animation # https://codepen.io/cruip/pen/ZEVXoQP --> {% endcomment %}
  
- <section class="border-25 ">
+<section class="border-25 ">
   <div class="flex items-center justify-start">
   <div class="container mx-auto relative">
     <h2 class="text-left text-2xl leading-tight pb-4">Our Business Relationships</h2>
@@ -96,7 +97,47 @@
   </div>
 </div>
 </section>
+
 {% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
+
+<section id="formH" class="bg-gray-500 dark:bg-white bg-fixed p-4">
+  <div class="flex flex-col md:flex-row items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <div class="md:w-1/2 mb-6 md:mb-0">
+          <a href="{% url 'home' %}" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
+            <img style="height:50%" src="{% static 'images/Fe_2.png' %}" alt="Levi-Strauss" />         
+          </a>
+      </div>
+      <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  Contact Us
+              </h1>
+              <form method="post" class="space-y-4 md:space-y-6" action="#">
+                {% csrf_token %}
+                  <div>
+                      <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+                      {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required=""%}
+                  </div>
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                      {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""%}
+                  </div>
+                  <div>
+                    <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+                    {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True"%}
+                </div>
+                <div>
+                  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                  {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True"%}
+              </div>
+                  
+                  <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
+                  
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
 
 
 
