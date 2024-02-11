@@ -2,7 +2,7 @@
 
 {% comment %} <!-- Navbar --> {% endcomment %}
 
-<nav class="bg-transparent p-4 fixed top-0 w-full z-10">
+<nav class="bg-slate-100 p-4 fixed top-0 w-full z-10">
     <div class="container mx-auto flex justify-between items-center">
         {% comment %} <!-- Brand/logo --> {% endcomment %}
         
@@ -25,8 +25,8 @@
         <div class="hidden lg:flex space-x-4 items-center z1000">
             <a href="/" class="navlinks-hover navlinks-type">Home</a>
             <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Contact</a>
-            <a href="#" class="navlinks-hover navlinks-type"></a>
             <a href="{% url 'home' %}#formH" class="navlinks-hover navlinks-type ">Contact</a>
+            <a href="#" class="navlinks-hover navlinks-type"></a>
             <a href="#" class="navlinks-hover navlinks-type"></a>
         </div>
     </div>
@@ -43,12 +43,8 @@
                 </svg>
             </button>
         </div>
-        <a href="{% url 'home' %}#contactForm_Home" class="navlinks-hover navlinks-type ">Contact</a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
-        <a href="#" class="py-2 px-4 navlinks-hover navlinks-type"></a>
+        <a href="{% url 'home' %}#formH" class="navlinks-hover navlinks-type ">Contact</a>
+        
     </div>
 </div>
 </nav>
