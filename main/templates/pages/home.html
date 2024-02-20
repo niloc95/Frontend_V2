@@ -1,145 +1,220 @@
 {% extends 'base.html' %}
+
 {% block title %}Our Mission - Enabling Technology | FSE{% endblock %}
+
 {% load static %}
+
 {% block content %}
-{% load widget_tweaks %}
-{% include 'pages/seo_scripts/seo_default.html'%}
-{% comment %} <!-- Hero Section --> {% endcomment %}
-<section id="home-hero-section" class="bg-image p-4">
-  <div class="min-h-screen flex items-center justify-start text-white">
-    <div class="container mx-auto text-left">
-      <div class="flex items-center mb-4">
-        <h1 class="text-4xl headings-h1 leading-normal">{{ home_hero_h1 }}</h1>
-      </div>
-      <p class="text-white text-4xl webdev-h2 leading-tight">{{ home_hero_p2 }} </p>
-      <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Lets Talk</a>
-      <div id="made_by" class="absolute mx-auto bottom-0">
-        <p class="sub-heading-p">
-          Engineered with Django and TailwindCSS
-          <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
-            <i class="bi bi-github"></i>
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-{% comment %} <!-- End Hero Section --> {% endcomment %}
+  {% load widget_tweaks %}
+  {% include 'pages/seo_scripts/seo_default.html' %}
 
-<section id="webdev" class="border-25">
-  <div class="min-h-screen p-4 relative flex items-center justify-start text-white ">
-    <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover ">
-      <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="container mx-auto relative">
-      <div class="grid md:grid-cols-2 gap-20 text-left">
-        <H1 class="text-white text-4xl webdev-h2 leading-tight">{{ webdev_banner_headline }}</H1>
-        <H1 class="text-white text-2xl webdev-h2 leading-tight">{{ webdev_banner_tags }}</H1>
+  {% comment %} <!-- Hero Section --> {% endcomment %}
+  <section id="home_hero" class="">
+    <div class="min-h-screen p-4 relative flex items-end justify-start text-white">
+      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50 ">
+        <source src="{% static 'images/Joburg_Prod_vid.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="container mx-auto text-left z-10">
+        <div class="flex mb-4">
+          <h1 class="heading-xlarge">{{ home_hero_h1 }}</h1>
+        </div>
+        <p class="text-white text-large text-size-medium italic">{{ home_hero_p2 }}</p>
+        <p class="text-white text-large text-size-small">
+          <span class="font-medium" style="color: var(--frontend-yellow)">#Cloud Services</span>,
+          
+          <span style="color: var(--frontend-white)">#Software Development</span>, <br/>
+          <span style="color: var(--frontend-burnt-orange)">#Web Development</span>, <span style="color: var(--frontend-purple)">#Hardware</span></p>
+        
+        <div id="made_by" class="relative mx-auto items-right justify-end">
+          <p class="sub-heading-p">
+            Engineered with Django and TailwindCSS
+            <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
+              <i class="bi bi-github"></i>
+            </a>
+          </p>
+        </div>
       </div>
-      
-    </div>
-  </div>
-</section>
+  </section>
+  {% comment %} <!-- End Hero Section --> {% endcomment %}
 
-{% comment %} <!-- Logo Carousel animation # https://codepen.io/cruip/pen/ZEVXoQP --> {% endcomment %}
- 
-<section class="border-25 ">
-  <div class="flex items-center justify-start">
-  <div class="container mx-auto relative">
-    <h2 class="text-left text-2xl leading-tight pb-4">Our Business Relationships</h2>
-    <h2 class="text-left text-4xl headings-h1 text-slate-900 leading-tight">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
-    <div class="relative flex flex-col justify-center bg-white overflow-hidden">
-      <div class="w-full  mx-auto px-4 md:px-6 p-24">
-          <div class="text-center">
+  <section class="border-25 ">
+    <div class="flex items-center pt-56 justify-start">
+      <div class="container mx-auto relative">
+        <h2 class="heading-xlarge text-slate-900 pb-12 ">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
+        <div class="relative flex flex-col justify-center bg-white overflow-hidden">
+          <div class="w-full mx-auto px-4 md:px-6 p-24">
+            <div class="text-center">
               <div
-                  x-data="{}"
-                  x-init="$nextTick(() => {
-                      let ul = $refs.logos;
-                      ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                      ul.nextSibling.setAttribute('aria-hidden', 'true');
-                  })"
-                  class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+                x-data="{}"
+                x-init="$nextTick(() => {
+                    let ul = $refs.logos;
+                    ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                    ul.nextSibling.setAttribute('aria-hidden', 'true');
+                })"
+                class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
               >
-                  <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                      <li>
-                          <a href="https://flume.co.za/"><img style="height:55px"src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" /></a>
-                      </li>
-                      <li>
-                        <img style="height:55px"src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" />
-                      </li>
-                      <li>
-                        <img style="height:55px"src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" />
-                      </li>
-                      <li>
-                        <img style="height:55px"src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" />
-                      </li>
-                      <li>
-                        <img style="height:55px"src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" />
-                      </li>
-                      <li>
-                        <img style="height:55px"src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" />
-                      </li>
-                      <li>
-                        <img style="height:15px"src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" />
-                      </li>
-                      <li>
-                        <img style="height:45px"src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" />
-                      </li>
-                      <li>
-                        <img style="height:45px"src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" />
-                      </li>
-                  </ul>                
+                <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                  <li>
+                    <a href="https://flume.co.za/"><img style="height:55px" src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" /></a>
+                  </li>
+                  <li>
+                    <img style="height:55px" src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" />
+                  </li>
+                  <li>
+                    <img style="height:55px" src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" />
+                  </li>
+                  <li>
+                    <img style="height:55px" src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" />
+                  </li>
+                  <li>
+                    <img style="height:55px" src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" />
+                  </li>
+                  <li>
+                    <img style="height:55px" src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" />
+                  </li>
+                  <li>
+                    <img style="height:15px" src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" />
+                  </li>
+                  <li>
+                    <img style="height:45px" src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" />
+                  </li>
+                  <li>
+                    <img style="height:45px" src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" />
+                  </li>
+                </ul>                
               </div>
+            </div>
           </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
-{% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
+  {% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
 
-<section id="formH" class="bg-gray-500 dark:bg-white bg-fixed p-4">
-  <div class="flex flex-col md:flex-row items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+  {% comment %} <!-- Post Hero Section 
+  <section id="post_hero" class="p-4">
+    <div class=" flex items-start justify-start md:pt-32">
+      <div class="container mx-auto text-left">
+        <div class="flex items-center mb-4">
+          <h1 class="heading-medium text-slate-600 italic">{{ post_h1 }}</h1>
+        </div>
+        <p class="text-size-medium pb-10">{{ home_hero_p }}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:pb-20 pb-4">
+          <div class=" p-4 rounded-lg ">
+            <h2 class="text-size-small text-slate-600 ">Cloud Services</h2><br/>
+            <p>Simplify and accelerate your migration and modernization with guidance, tools, and resources.</p>
+          </div>
+          
+          <div class=" p-4 rounded-lg">
+            <h2 class="text-size-small text-slate-600">Infrastructure</h2><br/>
+            <p>Go beyond the limits of on-premises datacenters with more regions than any other provider.</p>
+
+          </div>
+          
+          <div class="p-4 rounded-lg">
+            <h2 class="text-size-small text-slate-600">Hosting & Web</h2>
+            <p>We partner with AWS, AZURE, IBM Cloud, IONOS</p>
+            <p>Complete end to end Web Devlopment</p>
+          </div>
+          
+          <div class="p-4 rounded-lg">
+            <h2 class="text-size-small text-slate-600">Software development</h2>
+            <p>APPS, Frontend, Backend Services</p>
+          </div>
+        
+      </div>
+        
+        <button type="button" class="w-full md:w-auto text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-sm text-size-medium px-20 py-3 me-2 mb-2 ">
+          <a href="{% url 'contact' %}">Let's Talk</a>
+        </button>
+      </div>
+    </div>
+  </section>
+  End Post Hero Section --> {% endcomment %}
+
+  {% comment %} <!-- Contact Form Section --> {% endcomment %}
+  <section id="formH" class="bg-gray-900 dark:bg-white bg-fixed p-4">
+    <div class="flex flex-col md:flex-row items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
       <div class="md:w-1/2 mb-6 md:mb-0">
-          <a href="{% url 'home' %}" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
-            <img style="height:50%" src="{% static 'images/Fe_2.png' %}" alt="Levi-Strauss" />         
-          </a>
+        <a href="{% url 'home' %}" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
+          <img style="height:50%" src="{% static 'images/Fe_2.png' %}" alt="Levi-Strauss" />         
+        </a>
       </div>
       <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Contact Us
-              </h1>
-              <form method="post" class="space-y-4 md:space-y-6" action="#">
-                {% csrf_token %}
-                  <div>
-                      <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
-                      {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required=""%}
-                  </div>
-                  <div>
-                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                      {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required=""%}
-                  </div>
-                  <div>
-                    <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-                    {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True"%}
-                </div>
-                <div>
-                  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-                  {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True"%}
-              </div>
-                  
-                  <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
-                  
-              </form>
-          </div>
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="heading-medium text-gray-900 dark:text-white">
+            Contact Us
+          </h1>
+          <form method="post" class="space-y-4 md:space-y-6" action="#">
+            {% csrf_token %}
+            <div>
+              <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+              {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required="" %}
+            </div>
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+              {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
+            </div>
+            <div>
+              <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+              {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
+            </div>
+            <div>
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+              {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
+            </div>
+            <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
+          </form>
+        </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
+  {% comment %} <!-- End Contact Form Section --> {% endcomment %}
+    
 
+  <section id="webdev" class="border-25">
+    <div class="min-h-screen p-4 relative flex items-center justify-start text-white">
+      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50">
+        <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="container mx-auto relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <div class="md:order-1 text-left md:pb-[600px]">
+            <div>
+              <h1 class="text-slate-90 heading-medium">Introduction</h1>
+            </div>
+          </div>
+          <div id="order-2_webdev" class="md:order-2 text-left md:col-span-2">
+            <div>
+              <h1 class="text-slate-90 heading-medium pb-12">We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.</h1>
+            </div>
+            <!-- Include the provided grid here -->
+            <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-7">
+              <div class="text-slate-100 text-size-large border-b">Frontend Consulting</div>
+              <div class="md:row-start-1 text-size-large border-b">Digital Commerce</div>
+              <div class="md:row-start-2 text-size-large border-b">Web Development</div>
+              <div class="md:row-start-3 text-size-large border-b">Behavioral Marketing</div>
+              <div class="md:row-start-4 text-size-large border-b">UX/UI Design</div>
+              <div class="md:row-start-5 text-size-large border-b">Cloud Migration</div>
+              <div class="md:row-start-1 text-size-large border-b">Hybrid Cloud</div>
+              <div class="md:row-start-2 text-size-large border-b">Frontend Garage</div>
+              <div class="md:row-start-3 text-size-large border-b">Tech Support</div>
+              <div class="md:row-start-4 text-size-large border-b">On PreSupport</div>
+              <div class="md:row-start-5 text-size-large border-b">Data Networking</div>
+            </div>
+            <!-- End of included grid -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  {% comment %} <!-- Logo Carousel animation # https://codepen.io/cruip/pen/ZEVXoQP --> {% endcomment %}
 
+  
 
-{% endblock content%}
+  
+{% endblock content %}

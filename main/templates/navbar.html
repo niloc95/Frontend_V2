@@ -2,17 +2,17 @@
 
 {% comment %} <!-- Navbar --> {% endcomment %}
 
-<nav class="bg-slate-100 p-4 fixed top-0 w-full z-10">
-    <div class="container mx-auto flex justify-between items-center">
+<nav class="p-4 fixed z1000 top-0 w-full">
+    <div class="container mx-auto flex justify-between items-center nav-border">
         {% comment %} <!-- Brand/logo --> {% endcomment %}
-        
+
         <a href="{% url 'home' %}">
-            <span class="logo-type">{{logo}} </span>
+            <span class="logo-type ">{{logo}} </span>
             <span class="icon-fav">{{logo_favicon}}</span>
             <span class="logo-type-sub-type br">{{logo_sub_title}}</span>
         </a>
         {% comment %} <!-- Mobile menu button (hidden on desktop) --> {% endcomment %}
-        <div class="lg:hidden">
+        <div class="lg:hidden ">
             <button id="menu-toggle" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -22,18 +22,18 @@
             </button>
         </div>
         {% comment %} <!-- Desktop menu (hidden on mobile) --> {% endcomment %}
-        <div class="hidden lg:flex space-x-4 items-center z1000">
-            <a href="/" class="navlinks-hover navlinks-type">Home</a>
-            <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Contact</a>
+        <div class="hidden lg:flex space-x-4 items-center ">
+            <a href="/" class="navlinks-hover navlinks-type">About</a>
+            <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Work</a>
             <a href="{% url 'home' %}#formH" class="navlinks-hover navlinks-type ">Contact</a>
-            <a href="#" class="navlinks-hover navlinks-type"></a>
+            <a href="#" class="navlinks-hover navlinks-type">Projects</a>
             <a href="#" class="navlinks-hover navlinks-type"></a>
         </div>
     </div>
 
     <div id="mobile-menu"
     class="lg:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 backdrop-blur z-50 hidden z1000">
-    <div class="flex flex-col items-start">
+    <div class="flex flex-col items-start p-4">
         <div class="p-4">
             <button id="close-menu" class="text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -47,6 +47,7 @@
         
     </div>
 </div>
+
 </nav>
 {% comment %} <!-- Mobile menu (hidden on desktop) --> {% endcomment %}
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
