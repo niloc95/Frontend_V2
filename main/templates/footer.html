@@ -1,6 +1,6 @@
 {% load static %}
 
-<footer class="dark:bg-gray-800 lg:grid lg:grid-cols-5">
+<footer class="bg-slate-900 lg:grid lg:grid-cols-5">
   <div class="relative block h-32 lg:col-span-2 lg:h-full">
     <img
       src="https://images.unsplash.com/photo-1642370324100-324b21fab3a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
@@ -10,19 +10,26 @@
   </div>
 
   <div class="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div>
         <p>
-          <span class="text-xs uppercase tracking-wide text-gray-500"> Call us </span>
+          <span class="text-xs uppercase tracking-wide text-gray-100 sub-heading-p"> Call us </span>
 
-          <a href="#" class="block text-2xl font-medium text-gray-100 hover:opacity-75 sm:text-3xl">
-            +27 76 829 7070
+          <a href="#" class="heading-medium block text-gray-100 hover:opacity-75 ">
+            +27768297070
           </a>
         </p>
 
-        <ul class="mt-8 space-y-1 text-sm text-gray-100">
+        <ul class="mt-8 space-y-1 text-sm text-gray-100 sub-heading-p">
           <li>Monday to Friday: 8am - 4:30pm</li>
           <li>Weekend & Public Hoildays: Closed</li>
+        </ul>
+
+        <ul class="mt-8 space-y-1 text-sm text-gray-100 sub-heading-p">
+          <li>155 West Street</li>
+          <li>Sandton, Johannesburg</li>
+          <li>Gauteng, ZA</li>
+          <li>2196</li>
         </ul>
 
         <ul class="mt-8 flex gap-6">
@@ -31,7 +38,7 @@
               href="https://twitter.com/CodeCara"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-900 transition hover:opacity-75"
+              class="text-gray-100 transition hover:opacity-75"
             >
               <span class="sr-only">Twitter</span>
 
@@ -46,7 +53,7 @@
               href="https://github.com/Frontend-Dev-ZA"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-900 transition hover:opacity-75"
+              class="text-gray-100 transition hover:opacity-75"
             >
               <span class="sr-only">GitHub</span>
 
@@ -61,7 +68,7 @@
               href="https://github.com/Frontend-Dev-ZA"
               rel="noreferrer"
               target="_blank"
-              class="text-gray-900 transition hover:opacity-75"
+              class="text-gray-100 transition hover:opacity-75"
             >
               <span class="sr-only">Linkedin</span>
 
@@ -73,47 +80,48 @@
         </ul>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 z-10">
         <div>
-          <p class="font-medium text-gray-100">Services</p>
+          <p class=" text-gray-100 heading-medium">Services</p>
+          <a href="#" class=" navlinks-hover navlinks-type"> Software Development </a>
 
           <ul class="mt-6 space-y-4 text-sm">
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type"> Software Development </a>
+              <a href="#" class="navlinks-hover navlinks-type"> Software Development </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type"> Web Development </a>
+              <a href="#" class="navlinks-hover navlinks-type"> Web Development </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type"> Cloud Solutions </a>
+              <a href="#" class="navlinks-hover navlinks-type"> Cloud Solutions </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type"> Networking Solutions  </a>
+              <a href="#" class="navlinks-hover navlinks-type"> Networking Solutions  </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type"> SEO Optimisation </a>
+              <a href="#" class="navlinks-hover navlinks-type"> SEO Optimisation </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <p class="font-medium text-gray-100">Useful Links</p>
+          <p class=" text-gray-100 heading-medium">Links</p>
 
           <ul class="mt-6 space-y-4 text-sm">
             <li>
-              <a href="https://sunsynk.net/plants" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type" alt="SunSynk Web-app" target="_blank">SunSynk WebApp </a>
+              <a href="https://sunsynk.net/plants" class="text-gray-500 transition hover:opacity-50 navlinks-type" alt="SunSynk Web-app" target="_blank">SunSynk WebApp </a>
             </li>
 
             <li>
-              <a href="#" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type" alt="Frontend Billing System"target="_blank"> Billing </a>
+              <a href="https://billing.frontend.co.za" class="navlinks-hover navlinks-type" alt="Frontend Billing System" target="_blank"> Billing </a>
             </li>
 
             <li>
-              <a href="https://semeonline.awsapps.com/mail" class="text-gray-700 transition hover:opacity-75 navlinks-hover navlinks-type" target="_blank"> Webmail </a>
+              <a href="https://semeonline.awsapps.com/mail" class="navlinks-hover navlinks-type" target="_blank"> Webmail </a>
             </li>
           </ul>
         </div>
@@ -124,19 +132,16 @@
       <div class="sm:flex sm:items-center sm:justify-between">
         <ul class="flex flex-wrap gap-4 text-xs">
           <li>
-            <a href="#" class="text-gray-500 transition hover:opacity-75"> Terms & Conditions </a>
+            <a href="{% url 'terms' %}" class="text-gray-500 transition hover:opacity-75 sub-heading-p"> Terms & Conditions </a>
           </li>
 
+         
           <li>
-            <a href="#" class="text-gray-500 transition hover:opacity-75"> Privacy Policy </a>
-          </li>
-
-          <li>
-            <a href="#" class="text-gray-500 transition hover:opacity-75"> Cookies </a>
+            <a href="#" class="text-gray-500 transition hover:opacity-75 sub-heading-p"> Cookies </a>
           </li>
         </ul>
 
-        <p class="mt-8 text-xs text-gray-500 sm:mt-0">
+        <p class="mt-8 text-xs text-gray-500 sm:mt-0 sub-heading-p">
           &copy; 2024. Frontend Dev (Pty) Ltd. All rights reserved.
         </p>
       </div>
