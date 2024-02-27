@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 
 def common_context():
     return {
-        'home_hero_h1': 'An innovative IT solutions practice', 
+        'home_hero_h1': 'Connecting the dots. It’s what we do', 
         'home_hero_p': 'Assisting businesses to invest in their digital future on their own terms.',
         'home_hero_p2': 'Professional services network',
         'post_h1': 'How we can help you',
