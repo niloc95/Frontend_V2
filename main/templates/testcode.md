@@ -802,3 +802,44 @@
     </div>
   </div>
 </footer>
+
+
+.scroll-watcher {
+  height: 75px;
+  position: fixed;
+  
+  top: 0;
+  left: 25px;
+  right: 25px;
+  z-index: 1;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.65); /* 15 23 42 */
+  transform-origin: left;
+  transform: scaleY(0);
+
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@media (max-width: 1280px) {
+  /* Set the button's width to 100% on screens with a max width of 768px (adjust this breakpoint as needed) */
+  .scroll-watcher {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@keyframes scroll-watcher{
+  to { transform: scaleY(1); }
+}
+
+/* .reveal-on-scroll {
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  opacity: 0;
+  transform: translateY(-150px);
+}
+
+.reveal-on-scroll.reveal {
+  opacity: 1;
+  transform: translateY(0);
+} */
