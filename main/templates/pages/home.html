@@ -9,10 +9,10 @@
   {% include 'pages/seo_scripts/seo_default.html' %}
 
   {% comment %} <!-- Hero Section --> {% endcomment %}
-  <section id="home_hero" class="border-10">
+  <section id="home_hero" >
     <div class="min-h-screen p-4 relative flex items-center justify-start text-white">
       <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50 ">
-        <source src="{% static 'images/Hero_edited.mp4' %}" type="video/mp4">
+        <source src="{% static 'images/Hero_prod.mp4' %}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="container mx-auto text-left z-10 ">
@@ -38,8 +38,8 @@
   </section>
   {% comment %} <!-- End Hero Section --> {% endcomment %}
 
-  <section class="border-25">
-    <div class="flex items-center justify-start py-52">
+  <section class="border-25 ">
+    <div class="flex items-center justify-start py-16 ">
       <div class="container mx-auto relative">
         <h2 class="heading-xlarge text-slate-900 pb-12 ">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
         <div class="relative flex flex-col justify-center bg-white overflow-hidden">
@@ -52,36 +52,36 @@
                     ul.insertAdjacentHTML('afterend', ul.outerHTML);
                     ul.nextSibling.setAttribute('aria-hidden', 'true');
                 })"
-                class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
-              >
+                class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
                 <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                   <li>
-                    <a href="https://flume.co.za/"><img style="height:55px" src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" /></a>
+                    <a href="https://flume.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" target="blank"/></a>
                   </li>
                   <li>
-                    <img style="height:55px" src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" />
+                    <a href="https://saltylemonkites.com/" target="blank"><img style="height:55px" src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" /></a>
                   </li>
                   <li>
-                    <img style="height:55px" src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" />
+                    <a href="https://bettaway.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" /></a>
                   </li>
                   <li>
-                    <img style="height:55px" src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" />
+                    <a href="https://growthpoint.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" /></a>
                   </li>
                   <li>
-                    <img style="height:55px" src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" />
+                    <a href="https://digitlab.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" /></a>
                   </li>
                   <li>
-                    <img style="height:55px" src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" />
+                    <a href="https://vitaforce.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" /></a>
                   </li>
                   <li>
-                    <img style="height:15px" src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" />
+                    <a href="https://www.levistrauss.com/" target="blank"><img style="height:15px" src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" /></a>
                   </li>
                   <li>
-                    <img style="height:45px" src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" />
+                    <a href="https://www.hyperiondev.com/" target="blank"><img style="height:45px" src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" /></a>
                   </li>
                   <li>
-                    <img style="height:45px" src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" />
+                    <a href="https://chavda.com/" target="blank"><img style="height:45px" src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" /></a>
                   </li>
+                  
                 </ul>                
               </div>
             </div>
@@ -93,87 +93,7 @@
 
   {% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
 
-  {% comment %} <!-- Post Hero Section 
-  <section id="post_hero" class="p-4">
-    <div class=" flex items-start justify-start md:pt-32">
-      <div class="container mx-auto text-left">
-        <div class="flex items-center mb-4">
-          <h1 class="heading-medium text-slate-600 italic">{{ post_h1 }}</h1>
-        </div>
-        <p class="text-size-medium pb-10">{{ home_hero_p }}</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:pb-20 pb-4">
-          <div class=" p-4 rounded-lg ">
-            <h2 class="text-size-small text-slate-600 ">Cloud Services</h2><br/>
-            <p>Simplify and accelerate your migration and modernization with guidance, tools, and resources.</p>
-          </div>
-          
-          <div class=" p-4 rounded-lg">
-            <h2 class="text-size-small text-slate-600">Infrastructure</h2><br/>
-            <p>Go beyond the limits of on-premises datacenters with more regions than any other provider.</p>
-
-          </div>
-          
-          <div class="p-4 rounded-lg">
-            <h2 class="text-size-small text-slate-600">Hosting & Web</h2>
-            <p>We partner with AWS, AZURE, IBM Cloud, IONOS</p>
-            <p>Complete end to end Web Devlopment</p>
-          </div>
-          
-          <div class="p-4 rounded-lg">
-            <h2 class="text-size-small text-slate-600">Software development</h2>
-            <p>APPS, Frontend, Backend Services</p>
-          </div>
-        
-      </div>
-        
-        <button type="button" class="w-full md:w-auto text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-sm text-size-medium px-20 py-3 me-2 mb-2 ">
-          <a href="{% url 'contact' %}">Let's Talk</a>
-        </button>
-      </div>
-    </div>
-  </section>
-  End Post Hero Section --> {% endcomment %}
-
-  {% comment %} <!-- Contact Form Section --> {% endcomment %}
-  <section id="formH" class="bg-gray-900 dark:bg-white bg-fixed p-4">
-    <div class="flex flex-col md:flex-row items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <div class="md:w-1/2 mb-6 md:mb-0">
-        <a href="{% url 'home' %}" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
-          <img style="height:50%" src="{% static 'images/Fe_2.png' %}" alt="Levi-Strauss" />         
-        </a>
-      </div>
-      <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 class="heading-medium text-gray-900 dark:text-white">
-            Contact Us
-          </h1>
-          <form method="post" class="space-y-4 md:space-y-6" action="#">
-            {% csrf_token %}
-            <div>
-              <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
-              {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required="" %}
-            </div>
-            <div>
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-              {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
-            </div>
-            <div>
-              <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-              {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
-            </div>
-            <div>
-              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-              {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
-            </div>
-            <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% comment %} <!-- End Contact Form Section --> {% endcomment %}
-    
-
+  {% comment %} <!-- Webdev Section --> {% endcomment %}
   <section id="webdev" class="border-25">
     <div class="min-h-screen p-4 relative flex items-center justify-start text-white">
       <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50">
@@ -211,7 +131,48 @@
       </div>
     </div>
   </section>
+  {% comment %} <!-- Webdev Section --> {% endcomment %}
 
+  {% comment %} <!-- Contact Form Section --> {% endcomment %}
+  <section id="formH" class="bg-gray-900 dark:bg-white bg-fixed p-4 border-10">
+    <div class="flex flex-col md:flex-row items-center justify-center mx-auto lg:py-12">
+      <div class="md:w-1/2 mb-6 md:mb-0">
+        <a href="{% url 'home' %}" class="flex items-center text-gray-900 dark:text-white">
+          <img style="height:50%" src="{% static 'images/Fe_2.png' %}" alt="Frontend Software Engineering" />         
+        </a>
+      </div>
+      <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="heading-medium text-gray-900 dark:text-white">
+            Contact Us
+          </h1>
+          <form method="post" class="space-y-4 md:space-y-6" action="#">
+            {% csrf_token %}
+            <div>
+              <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+              {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required="" %}
+            </div>
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+              {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
+            </div>
+            <div>
+              <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+              {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
+            </div>
+            <div>
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+              {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
+            </div>
+            <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% comment %} <!-- End Contact Form Section --> {% endcomment %}
+    
+  
   {% comment %} <!-- Logo Carousel animation # https://codepen.io/cruip/pen/ZEVXoQP --> {% endcomment %}
 
   
