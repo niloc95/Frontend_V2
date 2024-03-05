@@ -124,9 +124,9 @@ def thank_you_page(request):
 
 
 # Mailchimp Settings
-api_key = ('MAILCHIMP_API_KEY')
-server = ('MAILCHIMP_DATA_CENTER')
-list_id = ('MAILCHIMP_EMAIL_LIST_ID')
+#api_key = ('MAILCHIMP_API_KEY')
+#server = ('MAILCHIMP_DATA_CENTER')
+#list_id = ('MAILCHIMP_EMAIL_LIST_ID')
 
 
 # Subscription Logic
@@ -138,8 +138,8 @@ def subscribe(email):
 
     mailchimp = Client()
     mailchimp.set_config({
-        "api_key": api_key,
-        "server": server,
+        "api_key": settings.MAILCHIMP_API_KEY,
+        "server": settings.MAILCHIMP_DATA_CENTER,
     })
 
     member_info = {
@@ -148,7 +148,7 @@ def subscribe(email):
     }
 
     try:
-        response = mailchimp.lists.add_list_member(list_id, member_info)
+        response = mailchimp.lists.add_list_member(settings.MAILCHIMP_EMAIL_LIST_ID, member_info)
         print("response: {}".format(response))
     except ApiClientError as error:
         print("An exception occurred: {}".format(error.text))
