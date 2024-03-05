@@ -3,6 +3,9 @@ from .forms import ContactForm
 from django.urls import reverse
 from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib import messages
+from mailchimp_marketing import Client
+from mailchimp_marketing.api_client import ApiClientError
 
 # Create your views here.
 
@@ -118,3 +121,43 @@ def contact(request):
 
 def thank_you_page(request):
     return render(request, 'pages/thanku.html')
+
+
+# Mailchimp Settings
+api_key = ('MAILCHIMP_API_KEY')
+server = ('MAILCHIMP_DATA_CENTER')
+list_id = ('MAILCHIMP_EMAIL_LIST_ID')
+
+
+# Subscription Logic
+def subscribe(email):
+    """
+     Contains code handling the communication to the mailchimp api
+     to create a contact/member in an audience/list.
+    """
+
+    mailchimp = Client()
+    mailchimp.set_config({
+        "api_key": api_key,
+        "server": server,
+    })
+
+    member_info = {
+        "email_address": email,
+        "status": "subscribed",
+    }
+
+    try:
+        response = mailchimp.lists.add_list_member(list_id, member_info)
+        print("response: {}".format(response))
+    except ApiClientError as error:
+        print("An exception occurred: {}".format(error.text))
+
+
+def subscription(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        print(email)
+        messages.success(request, "Email received. thank You! ") # message
+
+    return render(request, "pages/subs.html")
