@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="home_hero" >
+    <div class="min-h-screen p-4 relative flex justify-start text-white items-center">
+      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50 ">
+        <source src="{% static 'images/Hero_prod.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="container mx-auto text-left z-10 ">
+        <div class="flex mb-4 ">
+          <h1 class="heading-xlarge">{{ home_hero_h1 }}</h1>
+        </div>
+        <p class="text-white  text-size-medium italic">{{ home_hero_p2 }}</p>
+        <p class="text-white">
+          <span class="text-size-small">#Cloud Services</span>,
+          <span class="text-size-small">#Software Development</span>, <br/>
+          <span class="text-size-small">#Web Development</span>, 
+          <span class="text-size-small">#Hardware</span></p>
+        
+        <div id="made_by" class="relative mx-auto justify">
+          <p class="sub-heading-p">
+            Engineered with Django and TailwindCSS
+            <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
+              <i class="bi bi-github"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+  </section>
+    <section class="bg-slate-500 pt-28">
+        <div class="bg-slate-500 pt-28">
+            <form method="post" action="{% url 'subscription' %}">
+                {% csrf_token %}
+          
+                <div class="form-group pt-20">
+                  <label>Subscribe to get the latest Articles</label> <br>
+                  <input type="email" name="email" placeholder="Enter Email to Subscribe">
+                  <button class="btn btn-info" type="submit">Submit</button>
+                </div>
+          
+              </form>
+          
+              <!-- message if email is sent -->
+            {% if messages %}
+              {% for message in messages %}
+                <div class="my-5 alert alert-success">
+                  <h5 class="m-0">
+                      {{ message }}
+                  </h5>
+                </div>
+              {% endfor %}
+            {% endif %}
+            <h2>Thank You </h2>
+        </div>
+    </section>
+
+{% endblock content %}
