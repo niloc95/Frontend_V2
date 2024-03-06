@@ -3,9 +3,7 @@ from .forms import ContactForm
 from django.urls import reverse
 from django.conf import settings
 from django.core.mail import send_mail
-from django.contrib import messages
-from mailchimp_marketing import Client
-from mailchimp_marketing.api_client import ApiClientError
+from .mailchimp_utils import subscribe_user
 
 # Create your views here.
 
@@ -104,7 +102,7 @@ def contact(request):
             subject = 'Website contact submission'
             message = f'Name: {form.cleaned_data["name"]}\nEmail: {user_email}\nPhone Number: {form.cleaned_data["phone_number"]}\nMessage: {form.cleaned_data["message"]}\nCompany: {settings.COMPANY_CONTACT_NAME}\nContact Person: {settings.PERSONAL_CONTACT_NAME}'
             from_email = settings.FROM_NAME
-            recipient_list = [user_email, settings.EMAIL_HOST_USER]
+            recipient_list = [user_email, settings.CONTACT_EMAIL]
 
             send_mail(subject, message, from_email, recipient_list)
             # You can add a success message or redirect to a thank-you page
@@ -120,44 +118,15 @@ def contact(request):
     return render(request, 'pages/contact.html', context)
 
 def thank_you_page(request):
-    return render(request, 'pages/thanku.html')
+    context = common_context()
+    return render(request, 'pages/thanku.html', context)
 
+from .mailchimp_utils import subscribe_user
 
-# Mailchimp Settings
-api_key = ('MAILCHIMP_API_KEY')
-server = ('MAILCHIMP_DATA_CENTER')
-list_id = ('MAILCHIMP_EMAIL_LIST_ID')
-
-
-# Subscription Logic
-def subscribe(email):
-    """
-     Contains code handling the communication to the mailchimp api
-     to create a contact/member in an audience/list.
-    """
-
-    mailchimp = Client()
-    mailchimp.set_config({
-        "api_key": api_key,
-        "server": server,
-    })
-
-    member_info = {
-        "email_address": email,
-        "status": "subscribed",
-    }
-
-    try:
-        response = mailchimp.lists.add_list_member(list_id, member_info)
-        print("response: {}".format(response))
-    except ApiClientError as error:
-        print("An exception occurred: {}".format(error.text))
-
-
-def subscription(request):
-    if request.method == "POST":
-        email = request.POST['email']
-        print(email)
-        messages.success(request, "Email received. thank You! ") # message
-
-    return render(request, "pages/subs.html")
+def subscribe(request):
+    context = common_context()
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        subscribe_user(email)
+        # Optionally, you can handle success or error messages here
+    return render(request, 'pages/subs.html', context)
