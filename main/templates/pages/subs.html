@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% block title %}Subscription - Frontend Engineering{% endblock %}
 {% load static %}
 {% block content %}
+{% load widget_tweaks %}
 
 <section id="home_hero" >
     <div class="min-h-screen p-4 relative flex justify-start text-white items-center">
@@ -18,6 +20,27 @@
           <span class="text-size-small">#Software Development</span>, <br/>
           <span class="text-size-small">#Web Development</span>, 
           <span class="text-size-small">#Hardware</span></p>
+
+          <form method="post" action="#">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" class="form-input mt-1 block w-full rounded-md" required>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Subscribe</button>
+        </form>
+        <!-- Error message for invalid email -->
+        {% if errors %}
+            <div class="text-red-500 mt-2">
+                {{ errors.email.0 }}
+            </div>
+        {% endif %}
+        <!-- Success message -->
+        {% if subscribed %}
+            <div class="text-green-500 mt-2">
+                Thank you for subscribing!
+            </div>
+        {% endif %}
         
         <div id="made_by" class="relative mx-auto justify">
           <p class="sub-heading-p">
@@ -29,31 +52,6 @@
         </div>
       </div>
   </section>
-    <section class="bg-slate-500 pt-28">
-        <div class="bg-slate-500 pt-28">
-            <form method="post" action="{% url 'subscription' %}">
-                {% csrf_token %}
-          
-                <div class="form-group pt-20">
-                  <label>Subscribe to get the latest Articles</label> <br>
-                  <input type="email" name="email" placeholder="Enter Email to Subscribe">
-                  <button class="btn btn-info" type="submit">Submit</button>
-                </div>
-          
-              </form>
-          
-              <!-- message if email is sent -->
-            {% if messages %}
-              {% for message in messages %}
-                <div class="my-5 alert alert-success">
-                  <h5 class="m-0">
-                      {{ message }}
-                  </h5>
-                </div>
-              {% endfor %}
-            {% endif %}
-            <h2>Thank You </h2>
-        </div>
-    </section>
+    
 
 {% endblock content %}

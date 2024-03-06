@@ -134,9 +134,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Your SMTP email p
 COMPANY_CONTACT_NAME = 'Frontend Software Engineering'
 PERSONAL_CONTACT_NAME = 'Mark Jones'
 FROM_NAME = 'Nilo Cara'
+CONTACT_EMAIL = 'za_admin@frontend.co.za'
 DEFAULT_FROM_EMAIL = 'Mark Jones'
 
-#MailChimp Credentials
+#Mailchimp Credentical
 MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')
-MAILCHIMP_DATA_CENTER = os.environ.get('MAILCHIMP_DATA_CENTER')
-MAILCHIMP_EMAIL_LIST_ID = os.environ.get('MAILCHIMP_EMAIL_LIST_ID')

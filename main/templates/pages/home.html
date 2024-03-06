@@ -17,9 +17,9 @@
       </video>
       <div class="container mx-auto text-left z-10 ">
         <div class="flex mb-4 ">
-          <h1 class="heading-xlarge">{{ home_hero_h1 }}</h1>
+          <h1 class="heading-medium">{{ home_hero_h1 }}</h1>
         </div>
-        <p class="text-white  text-size-medium italic">{{ home_hero_p2 }}</p>
+        <p class="text-white text-size-medium italic">{{ home_hero_p2 }}</p>
         <p class="text-white">
           <span class="text-size-small">#Cloud Services</span>,
           <span class="text-size-small">#Software Development</span>, <br/>
@@ -39,9 +39,9 @@
   {% comment %} <!-- End Hero Section --> {% endcomment %}
 
   <section class="border-25 ">
-    <div class="flex items-center justify-start py-16 ">
+    <div class="flex items-center justify-start pt-32 ">
       <div class="container mx-auto relative">
-        <h2 class="heading-xlarge text-slate-900 pb-12 ">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
+        <h2 class="heading-medium text-slate-900 pb-12 ">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
         <div class="relative flex flex-col justify-center bg-white overflow-hidden">
           <div class="w-full mx-auto px-4 md:px-6 p-24">
             <div class="text-center">
@@ -136,9 +136,9 @@
   {% comment %} <!-- Contact Form Section --> {% endcomment %}
   <section id="formH" class="bg-gray-900 dark:bg-white bg-fixed p-4 border-10">
     <div class="flex flex-col md:flex-row items-center justify-center mx-auto lg:py-12">
-      <div class="md:w-1/2 mb-6 md:mb-0">
-        <a href="{% url 'home' %}" class="flex items-center text-gray-900 dark:text-white">
-          <img style="height:50%" src="{% static 'images/Fe_2.png' %}" alt="Frontend Software Engineering" />         
+      <div class="md:w-1/3 w-1/2 mr-0 md:mr-40 md:mb-0 ">
+        <a href="{% url 'home' %}" class="flex items-center justify-center text-gray-900 dark:text-white">
+          <img style="height: 50%;" src="{% static 'images/Fe_2.png' %}" alt="Frontend Software Engineering" />         
         </a>
       </div>
       <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -149,7 +149,7 @@
           <form method="post" class="space-y-4 md:space-y-6" action="#">
             {% csrf_token %}
             <div>
-              <label for="Name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
+              <label for="Name" class="block mb-2 text-sm font-medium text-white">Full Name</label>
               {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required="" %}
             </div>
             <div>
