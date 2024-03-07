@@ -69,8 +69,8 @@ def home(request, id=None):
             
             subject = 'Website contact submission'
             message = f'Name: {form.cleaned_data["name"]}\nEmail: {user_email}\nPhone Number: {form.cleaned_data["phone_number"]}\nMessage: {form.cleaned_data["message"]}\nCompany: {settings.COMPANY_CONTACT_NAME}\nContact Person: {settings.PERSONAL_CONTACT_NAME}'
-            from_email = settings.FROM_NAME
-            recipient_list = [user_email, settings.EMAIL_HOST_USER]
+            from_email = settings.CONTACT_EMAIL
+            recipient_list = [user_email, settings.CONTACT_EMAIL]
 
             send_mail(subject, message, from_email, recipient_list)
             # Additional processing like sending emails can be done here
@@ -101,7 +101,7 @@ def contact(request):
             
             subject = 'Website contact submission'
             message = f'Name: {form.cleaned_data["name"]}\nEmail: {user_email}\nPhone Number: {form.cleaned_data["phone_number"]}\nMessage: {form.cleaned_data["message"]}\nCompany: {settings.COMPANY_CONTACT_NAME}\nContact Person: {settings.PERSONAL_CONTACT_NAME}'
-            from_email = settings.FROM_NAME
+            from_email = settings.CONTACT_EMAIL
             recipient_list = [user_email, settings.CONTACT_EMAIL]
 
             send_mail(subject, message, from_email, recipient_list)

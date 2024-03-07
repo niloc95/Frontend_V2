@@ -126,15 +126,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST')  # Example: 'smtp.gmail.com' for Gmail
 EMAIL_PORT = os.environ.get('EMAIL_PORT')  # Port for SMTP (587 for TLS, 465 for SSL, 25 for non-secure)
-EMAIL_USE_TLS = True  # Set this to False for non-TLS, True for TLS
-EMAIL_USE_SSL = False # Set this to True if you're using SSL
+EMAIL_USE_TLS = False  # Set this to False for non-TLS, True for TLS
+EMAIL_USE_SSL = True # Set this to True if you're using SSL
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # Your SMTP email address
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')  # Your SMTP email password mixhmepcggzywbiu
 #EMAIL_SUBJECT_PREFIX = '[Your App Name]'  # Optional prefix for email subjects
 COMPANY_CONTACT_NAME = 'Frontend Software Engineering'
 PERSONAL_CONTACT_NAME = 'Mark Jones'
 FROM_NAME = 'Nilo Cara'
-CONTACT_EMAIL = 'za_admin@frontend.co.za'
+CONTACT_EMAIL = 'Frontend Software <help@frontend.co.za>'
 DEFAULT_FROM_EMAIL = 'Mark Jones'
 
 #Mailchimp Credentical
