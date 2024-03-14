@@ -10,14 +10,14 @@
 
   {% comment %} <!-- Hero Section --> {% endcomment %}
   <section id="home_hero" >
-    <div class="min-h-screen p-4 relative flex justify-start text-white items-center">
-      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50 ">
+    <div class="min-h-screen relative flex justify-start text-white items-end pb-20 p-4">
+      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0  brightness-220 w-full h-full object-cover ">
         <source src="{% static 'images/Hero_prod.mp4' %}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <div class="container mx-auto text-left z-10 ">
         <div class="flex mb-4 ">
-          <h1 class="heading-medium">{{ home_hero_h1 }}</h1>
+          <h1 class="heading-medium text-white">{{ home_hero_h1 }}</h1>
         </div>
         <p class="text-white text-size-medium italic">{{ home_hero_p2 }}</p>
         <p class="text-white">
@@ -26,9 +26,9 @@
           <span class="text-size-small">#Web Development</span>, 
           <span class="text-size-small">#Hardware</span></p>
         
-        <div id="made_by" class="relative mx-auto justify">
-          <p class="sub-heading-p">
-            Engineered with Django and TailwindCSS
+        <div id="made_by" class="absolute bottom-4 right-4">
+          <p class="sub-heading-p ml-auto">
+            SourceCode
             <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
               <i class="bi bi-github"></i>
             </a>
@@ -104,7 +104,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-20">
           <div class="md:order-1 text-left md:pb-[600px]">
             <div>
-              <h1 class="text-white heading-medium">Website Development</h1>
+              <h1 class="text-white heading-medium">Project and Professional Development</h1>
             </div>
           </div>
           <div id="order-2_webdev" class="md:order-2 text-left md:col-span-2">

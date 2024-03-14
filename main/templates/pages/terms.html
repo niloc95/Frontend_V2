@@ -5,46 +5,40 @@
 {% load widget_tweaks %}
 
 
-  <section id="home-hero-section" class="p-4">
+  <section id="home-hero-section" class="p-4 bg-slate-900 border-10">
     <div class=" flex items-center justify-start text-white">
       <div class="container mx-auto text-left">
         <div class="flex items-center">
-          <h1 class="text-slate-900 text-4xl headings-h1 leading-normal mt-24">{{ terms_page_heading }}</h1>
+          <h1 class="text-slate-100 text-4xl headings-h1 leading-normal mt-24">{{ terms_page_heading }}</h1>
         </div>
-        <p class="text-slate-900 terms-text-p">{{ terms_general }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P1 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ 1_1_Use_of_the_Website }}</p>
-        <p class="text-slate-900 terms-text-p px-4">{{ 1_2_Use_of_the_Website }}</p>
-        <p class="text-slate-900 terms-text-p px-4">{{ 1_3_Use_of_the_Website }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P2 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ 2_User_Accounts }}</p>
-        <p class="text-slate-900 terms-text-p px-4">{{ 2_1_User_Accounts }}</p>
-        <p class="text-slate-900 terms-text-p px-4">{{ 1_3_Use_of_the_Website }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P3 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ 3_Intellectual_Property }}</p>
-        <p class="text-slate-900 terms-text-p px-4">{{ 3_2_Intellectual_Property }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P4 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ Limitation_of_Liability }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P5 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ 5_Governing_Law }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P6 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ 6_Changes_to_Terms }}</p><br>
-        <h2 class="text-slate-900 webdev-h2">{{ P7 }}</h2>
-        <p class="text-slate-900 terms-text-p px-4">{{ 7_Contact_Us }}</p><br><hr>
-        
-        <p class="text-slate-900 terms-text-p text-center">{{ Closing }}</p><br>
+        <p class="text-slate-100 terms-text-p">{{ terms_general }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P1 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ 1_1_Use_of_the_Website }}</p>
+        <p class="text-slate-100 terms-text-p px-4">{{ 1_2_Use_of_the_Website }}</p>
+        <p class="text-slate-100 terms-text-p px-4">{{ 1_3_Use_of_the_Website }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P2 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ 2_User_Accounts }}</p>
+        <p class="text-slate-100 terms-text-p px-4">{{ 2_1_User_Accounts }}</p>
+        <p class="text-slate-100 terms-text-p px-4">{{ 1_3_Use_of_the_Website }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P3 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ 3_Intellectual_Property }}</p>
+        <p class="text-slate-100 terms-text-p px-4">{{ 3_2_Intellectual_Property }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P4 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ Limitation_of_Liability }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P5 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ 5_Governing_Law }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P6 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ 6_Changes_to_Terms }}</p><br>
+        <h2 class="text-slate-100 webdev-h2">{{ P7 }}</h2>
+        <p class="text-slate-100 terms-text-p px-4">{{ 7_Contact_Us }}</p><br><hr>
+        <h2 class="text-slate-100 webdev-h2">{{ P8 }}</h2>
+        <p id="email_disclaimer" class="text-slate-100 terms-text-p px-4">{{ 8_Email_disclamer }}</p><br><hr>
+        <p class="text-slate-100 terms-text-p text-center">{{ Closing }}</p><br>
         
 
         
         <a href="{% url 'contact' %}" class="text-slate-900 webdev-h2">Lets Talk</a>
-        <div id="made_by" class="absolute mx-auto bottom-0">
-          <p class="sub-heading-p">
-            Engineered with Django and TailwindCSS
-            <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
-              <i class="bi bi-github"></i>
-            </a>
-          </p>
-        </div>
+        
       </div>
     </div>
   </section>

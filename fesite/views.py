@@ -4,6 +4,9 @@ from django.urls import reverse
 from django.conf import settings
 from django.core.mail import send_mail
 from .mailchimp_utils import subscribe_user
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+#from .utils import common_context
 
 # Create your views here.
 
@@ -30,19 +33,19 @@ def common_context():
         '2_User_Accounts':'2.1. In order to access certain features of the Website, you may be required to create an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.',
         '2_1_User_Accounts':'2.2. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer or device. You agree to accept responsibility for all activities that occur under your account or password.',
         'P3':'3. Intellectual Property',
-        '3_Intellectual_Property':'3.1. The Website and its original content, features, and functionality are owned by [Your Company Name] and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.',
+        '3_Intellectual_Property':'3.1. The Website and its original content, features, and functionality are owned by Frontend Dev (Pty)Ltd and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.',
         '3_2_Intellectual_Property':'3.2. You may not modify, publish, transmit, participate in the transfer or sale of, create derivative works from, distribute, display, reproduce, or perform, or in any way exploit in any format whatsoever any of the Website\'s content, in whole or in part, without our prior written consent.',
         'P4':'4. Limitation of Liability',
-        'Limitation_of_Liability':'4.1. To the fullest extent permitted by applicable law, in no event shall [Your Company Name], its affiliates, officers, directors, employees, agents, suppliers, or licensors be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Website; (ii) any conduct or content of any third party on the Website; (iii) any content obtained from the Website; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.',
+        'Limitation_of_Liability':'4.1. To the fullest extent permitted by applicable law, in no event shall Frontend Dev (Pty)Ltd, its affiliates, officers, directors, employees, agents, suppliers, or licensors be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Website; (ii) any conduct or content of any third party on the Website; (iii) any content obtained from the Website; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.',
         'P5':'5. Governing Law',
         '5_Governing_Law':'5.1. These Terms shall be governed by and construed in accordance with the laws of the Republic of South Africa, without regard to its conflict of law provisions.',
         'P6':'6. Changes to Terms',
         '6_Changes_to_Terms':'6.1. We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days\' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.',
         'P7':'7. Contact Us',
-        '7_Contact_Us':'7.1. If you have any questions about these Terms, please contact us at za_admin@frontend.co.za.',
+        '7_Contact_Us':'7.1. If you have any questions about these Terms, please contact us at help@frontend.co.za.',
         'Closing':'By accessing or using the Website, you agree to be bound by these Terms of Use.',
-        '':'',
-        '':'',
+        'P8':'8 .Email Disclamer',
+        '8_Email_disclamer':'8.1. This email and any attachments are confidential and may be privileged. If you are not the intended recipient, please notify the sender immediately and delete the email from your system. Any unauthorized use, dissemination, or copying of this email is prohibited. The views, opinions, and information expressed in this email are solely those of the sender and do not necessarily represent those of Frontend Dev (Pty)Ltd. While we take precautions to ensure that our emails are free from viruses, we accept no liability for any damage caused by any virus transmitted by this email. Recipients should perform their own virus checks. Email communication is not secure and may be intercepted or altered. Frontend Dev (Pty)Ltd cannot guarantee the confidentiality or integrity of this email transmission.',
         '':'',
         '':'',
         '':'',
@@ -66,23 +69,41 @@ def home(request, id=None):
             form.save()
 
             user_email = form.cleaned_data["email"]
-            
-            subject = 'Website contact submission'
-            message = f'Name: {form.cleaned_data["name"]}\nEmail: {user_email}\nPhone Number: {form.cleaned_data["phone_number"]}\nMessage: {form.cleaned_data["message"]}\nCompany: {settings.COMPANY_CONTACT_NAME}\nContact Person: {settings.PERSONAL_CONTACT_NAME}'
+
+            subject = 'Inquiry Regarding Our Services'
             from_email = settings.CONTACT_EMAIL
-            recipient_list = [user_email, settings.CONTACT_EMAIL]
+            to_email = [user_email]
 
-            send_mail(subject, message, from_email, recipient_list)
-            # Additional processing like sending emails can be done here
-            return redirect('thank_you_page')  # Redirect to thank you page after form submission
+            # Render HTML template
+            html_message = render_to_string('pages/email_template.html', {
+                'name': form.cleaned_data["name"],
+                'email': user_email,
+                'phone_number': form.cleaned_data["phone_number"],
+                'message': form.cleaned_data["message"],
+                'company': settings.COMPANY_CONTACT_NAME,
+                'contact_person': settings.PERSONAL_CONTACT_NAME,
+            })
 
-    # Add the form to the context
-    context['form'] = form
+            # Create and send email
+            email = EmailMultiAlternatives(subject, subject, from_email, to_email, bcc=[settings.CONTACT_EMAIL])
+            email.attach_alternative(html_message, "text/html")
+            email.send()
+
+            # Redirect to thank-you page
+            return redirect('thank_you_page')
+    else:
+        form = ContactForm()
+
+    context = {
+        'form': form,
+        **common_context(),  # Merge common context
+    }
     
     return render(request, 'pages/home.html', context)
 
 def tailwind(request):
-    return render(request, 'pages/tailwind.html')
+    context = common_context()
+    return render(request, 'pages/tailwind.html', context)
 
 def terms(request):
     context = common_context()
@@ -96,16 +117,29 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            
-            user_email = form.cleaned_data["email"]
-            
-            subject = 'Website contact submission'
-            message = f'Name: {form.cleaned_data["name"]}\nEmail: {user_email}\nPhone Number: {form.cleaned_data["phone_number"]}\nMessage: {form.cleaned_data["message"]}\nCompany: {settings.COMPANY_CONTACT_NAME}\nContact Person: {settings.PERSONAL_CONTACT_NAME}'
-            from_email = settings.CONTACT_EMAIL
-            recipient_list = [user_email, settings.CONTACT_EMAIL]
 
-            send_mail(subject, message, from_email, recipient_list)
-            # You can add a success message or redirect to a thank-you page
+            user_email = form.cleaned_data["email"]
+
+            subject = 'Inquiry Regarding Our Services'
+            from_email = settings.CONTACT_EMAIL
+            to_email = [user_email]
+
+            # Render HTML template
+            html_message = render_to_string('pages/email_template.html', {
+                'name': form.cleaned_data["name"],
+                'email': user_email,
+                'phone_number': form.cleaned_data["phone_number"],
+                'message': form.cleaned_data["message"],
+                'company': settings.COMPANY_CONTACT_NAME,
+                'contact_person': settings.PERSONAL_CONTACT_NAME,
+            })
+
+            # Create and send email
+            email = EmailMultiAlternatives(subject, subject, from_email, to_email, bcc=[settings.CONTACT_EMAIL])
+            email.attach_alternative(html_message, "text/html")
+            email.send()
+
+            # Redirect to thank-you page
             return redirect('thank_you_page')
     else:
         form = ContactForm()

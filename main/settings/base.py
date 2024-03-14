@@ -135,7 +135,7 @@ COMPANY_CONTACT_NAME = 'Frontend Software Engineering'
 PERSONAL_CONTACT_NAME = 'Mark Jones'
 FROM_NAME = 'Nilo Cara'
 CONTACT_EMAIL = 'Frontend Software <help@frontend.co.za>'
-DEFAULT_FROM_EMAIL = 'Mark Jones'
+DEFAULT_FROM_EMAIL = 'help@frontend.co.za'
 
 #Mailchimp Credentical
 MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY')

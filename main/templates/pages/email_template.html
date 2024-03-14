@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Your custom CSS styles */
+        .custom-heading {
+            color: #333;
+        }
+
+        .custom-paragraph {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .text-size-large {
+            font-family: 'Outfit', sans-serif;;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: -5px;
+            font-weight: 400;
+            font-size: clamp(1.25rem, 0.9197rem + 1.4092vw, 2.188rem);
+           
+          }
+          
+          .text-size-medium {
+            font-family: 'Outfit', sans-serif;;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: -5px;
+            font-weight: 500;
+            font-size: clamp(1.25rem, 0.9197rem + 1.4092vw, 2.188rem);
+           
+          }
+          
+          .text-size-small {
+            font-family: 'Outfit', sans-serif;;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-bottom: -5px;
+            font-weight: 300;
+            font-size: clamp(1.25rem, 0.9197rem + 1.4092vw, 1.5rem);
+           
+          }
+    </style>
+
+</head>
+
+    <body class="bg-gray-100">
+
+        <div class="container mx-auto px-4 py-8">
+            <div class="max-w-lg mx-auto bg-white rounded-lg shadow-md p-8">
+                <h1 class="text-size-medium mb-4 ">Thank you for the callout</h1>
+                <p class="mb-4">Dear {{ name }},</p>
+                <p class="mb-4">Thank you for reaching out to us through our online contact form. We appreciate your interest in our services.</p>
+                <p class="mb-4">We have received your inquiry and will review it carefully. Our team will get back to you as soon as possible with the information you requested.</p>
+                <p class="mb-4">If you have any urgent questions or concerns, feel free to contact us directly at {{ settings.DEFAULT_FROM_EMAIL }}.</p>
+                <p class="mb-4">Once again, thank you for considering {{ company }}. We look forward to the opportunity to assist you.</p>
+                <p class="mt-4">Best regards,</p>
+                <p><span class="font-bold">{{ contact_person }}</span><br>Head of Sales<br>{{ company }}<br>help@frontend.co.za - +27 76 829 7070</p>
+                <img style="height: 20%;" src="https://frontend.co.za/static/images/Fe_2.png" alt="Frontend Software Engineering" />
+
+                <p class="text-size-medium mb-4">Your Details</p>
+                <p class="mb-4">Email: {{ email }}</p>
+                <p class="mb-4">Phone Number: {{ phone_number }}</p>
+                <p class="mb-4">Message: {{ message }}</p>
+
+            </div>
+        </div>
+        
+    </body>
+
+</html>
