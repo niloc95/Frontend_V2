@@ -6,15 +6,18 @@ from django.core.mail import send_mail
 from .mailchimp_utils import subscribe_user
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from django.http import HttpResponse
+from django.views.generic import View
+import os
 #from .utils import common_context
 
 # Create your views here.
 
 def common_context():
     return {
-        'home_hero_h1': 'Connecting the dots. It’s what we do', 
+        'home_hero_h1': 'Pushing the boundaries on innovation', 
         'home_hero_p': 'Assisting businesses to invest in their digital future on their own terms.',
-        'home_hero_p2': 'Professional services network',
+        'home_hero_p2': 'Your technology partner',
         'post_h1': 'How we can help you',
         'post_h2': 'We transform ideas into impact.',
         'logo': 'Frontend',
@@ -51,6 +54,21 @@ def common_context():
         '':'',
 
     }
+
+class RobotsTxtView(View):
+    def get(self, request, *args, **kwargs):
+        # Path to your robots.txt file
+        robots_file_path = os.path.join(settings.BASE_DIR, 'robots.txt')
+
+        # Read the contents of the robots.txt file
+        try:
+            with open(robots_file_path, 'r') as f:
+                robots_txt = f.read()
+        except FileNotFoundError:
+            robots_txt = "User-agent: *\nDisallow: /"
+
+        # Return the contents of robots.txt
+        return HttpResponse(robots_txt, content_type='text/plain')
 
 def base(request):
     return render(request, 'base.html')
