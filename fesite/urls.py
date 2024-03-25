@@ -1,6 +1,7 @@
 from django.urls import path, include
 from . import views
 from .views import contact, thank_you_page, subscribe
+from .views import RobotsTxtView
 
 
 urlpatterns = [
@@ -12,6 +13,7 @@ urlpatterns = [
     path('thank-you/', thank_you_page, name='thank_you_page'),
     path("__reload__/", include("django_browser_reload.urls")),
     path('subs/', views.subscribe, name="subscribe"),
+    path('robots.txt', RobotsTxtView.as_view(), name='robots_txt'),
     
 
 ]

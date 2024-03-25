@@ -843,3 +843,55 @@
   opacity: 1;
   transform: translateY(0);
 } */
+
+
+
+
+
+<nav id="navbar" class="md:pt-4 pt-2 px-2 fixed z-50 top-0 w-full">
+    <div class="container mx-auto flex justify-between items-center nav-border">
+         {% comment %} <!-- Brand/logo --> {% endcomment %}
+
+        <div class="flex items-center">
+            <a href="{% url 'home' %}">
+                <span class="logo-type">{{logo}} </span>
+                <span class="icon-fav">{{logo_favicon}}</span>
+                <span class="logo-type-sub-type br">{{logo_sub_title}}</span>
+            </a>
+            
+             {% comment %} <!-- Desktop menu (hidden on mobile) --> {% endcomment %}
+
+            <div class="hidden lg:flex space-x-4 items-center ml-12">
+                <a href="/" class="navlinks-hover navlinks-type">About</a>
+                <a href="{% url 'contact' %}" class="navlinks-hover navlinks-type">Work</a>
+                <a href="{% url 'home' %}#formH" class="navlinks-hover navlinks-type ">Contact</a>
+                <a href="#" class="navlinks-hover navlinks-type">Projects</a>
+                <a href="#" class="navlinks-hover navlinks-type">Store</a>
+            </div>
+        </div>
+        
+         {% comment %} <!-- Mobile menu button (hidden on desktop) --> {% endcomment %}
+
+        <div class="lg:hidden">
+            <button id="menu-toggle" class="text-white focus:outline-none ml-auto">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    {% comment %} <!-- Mobile menu --> {% endcomment %}
+    <div id="mobile-menu" class="lg:hidden fixed top-0 right-0 w-full h-full bg-black bg-opacity-50 backdrop-blur hidden z-50">
+        <div class="flex flex-col items-start p-4">
+            <div class="p-4">
+                <button id="close-menu" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <a href="{% url 'home' %}#formH" class="navlinks-hover navlinks-type ">Contact</a>
+        </div>
+    </div>
+</nav>
