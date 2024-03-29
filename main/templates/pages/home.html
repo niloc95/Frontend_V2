@@ -1,322 +1,289 @@
 {% extends 'base.html' %}
-
 {% block title %}Our Mission - Enabling Technology | FSE{% endblock %}
-
 {% load static %}
-
 {% block content %}
-  {% load widget_tweaks %}
-  {% include 'pages/seo_scripts/seo_default.html' %}
-
-  {% comment %} <!-- Hero Section --> {% endcomment %}
-  <section id="home_hero" >
-    <div class="min-h-screen relative flex justify-start text-white items-end pb-20 p-4">
-      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 brightness-50 w-full h-full object-cover ">
-        <source src="{% static 'images/Hero_prod.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="container mx-auto text-left z-10 ">
-        <div class="flex mb-4 ">
-          <h1 class="heading-medium text-white">{{ home_hero_h1 }}</h1>
-        </div>
-        <p class="text-white text-size-medium">{{ home_hero_p2 }}</p>
-        <p class="text-white p-fes mr-auto md:w-1/2">
-          Frontend serves as your all-encompassing technology ally, boasting a skilled team of experts dedicated to conceptualizing, designing, developing, and implementing solutions. Our goal is not just to enhance the efficiency of your organization but also to empower you to capitalize on our data, tools, and knowledge, ensuring timely and cost-effective delivery for your business.
-          </p>
-        
-        <div id="made_by" class="absolute bottom-4 right-4">
-          <p class="sub-heading-p ml-auto">
-            SourceCode
-            <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
-              <i class="bi bi-github"></i>
-            </a>
-          </p>
-        </div>
+{% load widget_tweaks %}
+{% include 'pages/seo_scripts/seo_default.html' %}
+{% comment %} <!-- Hero Section --> {% endcomment %}
+<section id="home_hero" >
+  <div class="min-h-screen relative flex justify-start text-white items-end pb-20 p-4">
+    <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-75">
+      <source src="{% static 'images/Hero_prod.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="container mx-auto text-left z-10 ">
+      <div class="flex mb-4 ">
+        <h1 class="heading-medium text-white ">{{ home_hero_h1 }}</h1>
       </div>
-  </section>
-  {% comment %} <!-- End Hero Section --> {% endcomment %}
-
-  <section class="border-25 ">
-    <div class="flex items-center justify-start pt-32 ">
-      <div class="container mx-auto relative">
-        <h2 class="heading-medium text-slate-900 pb-12 ">We have propelled some of South Africa's fastest-growing companies to the next level.</h2>
-        <div class="relative flex flex-col justify-center bg-white overflow-hidden">
-          <div class="w-full mx-auto px-4 md:px-6 p-24">
-            <div class="text-center">
-              <div
-                x-data="{}"
-                x-init="$nextTick(() => {
-                    let ul = $refs.logos;
-                    ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                    ul.nextSibling.setAttribute('aria-hidden', 'true');
-                })"
-                class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-                <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                  <li>
-                    <a href="https://flume.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" target="blank"/></a>
-                  </li>
-                  <li>
-                    <a href="https://saltylemonkites.com/" target="blank"><img style="height:55px" src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" /></a>
-                  </li>
-                  <li>
-                    <a href="https://bettaway.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" /></a>
-                  </li>
-                  <li>
-                    <a href="https://growthpoint.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" /></a>
-                  </li>
-                  <li>
-                    <a href="https://digitlab.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" /></a>
-                  </li>
-                  <li>
-                    <a href="https://vitaforce.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" /></a>
-                  </li>
-                  <li>
-                    <a href="https://www.levistrauss.com/" target="blank"><img style="height:15px" src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" /></a>
-                  </li>
-                  <li>
-                    <a href="https://www.hyperiondev.com/" target="blank"><img style="height:45px" src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" /></a>
-                  </li>
-                  <li>
-                    <a href="https://chavda.com/" target="blank"><img style="height:45px" src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" /></a>
-                  </li>
-                  
-                </ul>                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% comment %} <!-- Logo Carousel animation # https://codepen.io/cruip/pen/ZEVXoQP --> {% endcomment %}
-  {% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
-
-  {% comment %} <!-- Webdev Section --> {% endcomment %}
-  <section id="webdev" class="border-10">
-    <div class="min-h-screen p-4 relative flex items-center justify-start text-white">
-      <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50">
-        <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="container mx-auto relative">
-        <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-40">
-          <div class="md:order-1 text-left ">
-            <div>
-              <h1 class="text-white heading-medium">Project and Professional Development</h1>
-              
-            </div>
-          </div>
-          <div id="order-2_webdev" class="md:order-2 text-left md:col-span-2">
-            <div>
-              <h2 class="text-white text-size-large  hover:text-slate-50 pb-12">We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.</h2>
-            </div>
-            <div class="accordion">
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100 p-fes">Frontend Consulting</button>
-                <div class="accordion-content text-slate-300 p-fes">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100 ">Digital Commerce</button>
-                <div class="accordion-content  text-slate-100 p-fes">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              {% comment %} <!--  --> {% endcomment %}
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100">Web Development</button>
-                <div class="accordion-content text-slate-100 p-fes">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              {% comment %} <!--  --> {% endcomment %}
-
-              {% comment %} <!--  --> {% endcomment %}
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100">Behavioral Marketing</button>
-                <div class="accordion-content text-slate-100 p-fes">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              {% comment %} <!--  --> {% endcomment %}
-
-              {% comment %} <!--  --> {% endcomment %}
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100">UX/UI Design</button>
-                <div class="accordion-content text-slate-100 p-fes ">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              {% comment %} <!--  --> {% endcomment %}
-
-              {% comment %} <!--  --> {% endcomment %}
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100">Cloud Migration</button>
-                <div class="accordion-content text-slate-100 p-fes">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  In the past when I started to design a website my process would go something like this: visit a site like type-scale.com or modularscale.com look at a few type scales, grab one I liked, and keep my fingers crossed that it would work out. At times I would get to the middle of a project and realize the scale I selected didn’t work for new pages like the blog or the shopping cart. At that point I would have to go back, select a different type scale and update everything I had already designed.
-
-The problem was I didn’t understand that some type scales are better suited to the needs of certain website archetypes more then others. I wasn’t thinking about the wholistic demands of the site and what type scale it would require. To solve these problems I needed to understand more about type scales and how ratios affected them.
-                </div>
-              </div>
-              {% comment %} <!--  --> {% endcomment %}
-
-              {% comment %} <!--  --> {% endcomment %}
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-100">Frontend Garage</button>
-                <div class="accordion-content text-slate-100 p-fes">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  In the past when I started to design a website my process would go something like this: visit a site like type-scale.com or modularscale.com look at a few type scales, grab one I liked, and keep my fingers crossed that it would work out. At times I would get to the middle of a project and realize the scale I selected didn’t work for new pages like the blog or the shopping cart. At that point I would have to go back, select a different type scale and update everything I had already designed.
-
-The problem was I didn’t understand that some type scales are better suited to the needs of certain website archetypes more then others. I wasn’t thinking about the wholistic demands of the site and what type scale it would require. To solve these problems I needed to understand more about type scales and how ratios affected them.
-                </div>
-              </div>
-              {% comment %} <!--  --> {% endcomment %}
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% comment %} <!-- Webdev Section --> {% endcomment %}
-
-  {% comment %} <!-- Contact Form Section --> {% endcomment %}
-  <section id="formH" class="bg-gray-900 dark:bg-white bg-fixed p-4 border-10">
-    <div class="flex flex-col md:flex-row items-center justify-center mx-auto lg:py-12">
-      <div class="md:w-1/3 w-1/2 mr-0 md:mr-40 md:mb-0 ">
-        <a href="{% url 'home' %}" class="flex items-center justify-center text-gray-900 dark:text-white">
-          <img style="height: 50%;" src="{% static 'images/Fe_2.png' %}" alt="Frontend Software Engineering" />         
-        </a>
-      </div>
-      <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <h1 class="heading-medium text-gray-900 dark:text-white">
-            Contact Us
-          </h1>
-          <form method="post" class="space-y-4 md:space-y-6" action="#">
-            {% csrf_token %}
-            <div>
-              <label for="Name" class="block mb-2 text-sm font-medium text-white">Full Name</label>
-              {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required="" %}
-            </div>
-            <div>
-              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-              {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
-            </div>
-            <div>
-              <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-              {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
-            </div>
-            <div>
-              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-              {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
-            </div>
-            <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  {% comment %} <!-- End Contact Form Section --> {% endcomment %}
+      <p class="text-white text-size-medium">{{ home_hero_p2 }}</p>
+      <p class="text-white p-fes mr-auto md:w-1/2">
+        Frontend serves as your all-encompassing technology ally, boasting a skilled team of experts dedicated to conceptualizing, designing, developing, and implementing solutions. Our goal is not just to enhance the efficiency of your organization but also to empower you to capitalize on our data, tools, and knowledge, ensuring timely and cost-effective delivery for your business.
+      </p>
     
-  
-  
-  {% comment %} <!-- Webdev Section --> {% endcomment %}
-  <section id="webdev" class="border-25">
-    <div class="min-h-screen p-4 relative flex items-center justify-start text-white">
-      <!-- <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50">
-        <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video> -->
-      <div class="container mx-auto relative">
-        <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-20">
-          <div class="md:order-1 text-left md:pb-[600px]">
-            <div>
-              <h1 class="text-slate-900 heading-medium">Project and Professional Development</h1>
-            </div>
-          </div>
-          <div id="order-2_webdev" class="md:order-2 text-left md:col-span-2">
-            <div>
-              <h1 class="text-slate-900 text-size-large pb-12">We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.</h1>
-            </div>
-            <!-- Include the provided grid here -->
-            <div class="accordion">
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-900">Section 1</button>
-                <div class="accordion-content text-size-small text-slate-900">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-900">Section 2</button>
-                <div class="accordion-content text-size-small text-slate-900">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-title text-size-large text-slate-900">Section 3</button>
-                <div class="accordion-content text-size-small text-slate-900">
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                  We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
-                </div>
-              </div>
-            </div>
+      <div id="made_by" class="absolute bottom-4 right-4">
+        <p class="sub-heading-p ml-auto">
+          SourceCode
+          <a href="https://github.com/niloc95/Frontend" target="_blank" alt="Nilo Cara - Software Engineer">
+            <i class="bi bi-github"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+</section>
+{% comment %} <!-- End Hero Section --> {% endcomment %}
+{% comment %} <!-- Logo Carousel animation --> {% endcomment %}
 
-            <!--  -->
-            <div class="accordion">
-              <div class="accordion-item">
-                <button class="accordion-title">Section 1</button>
-                <div class="accordion-content">
-                  Content for Section 1
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-title">Section 2</button>
-                <div class="accordion-content">
-                  Content for Section 2
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-title">Section 3</button>
-                <div class="accordion-content">
-                  Content for Section 3
-                </div>
-              </div>
+<section class="border-25 ">
+  <div class="flex items-center justify-start ">
+    <div class="container mx-auto relative">
+      <div class="relative flex flex-col justify-center bg-white overflow-hidden">
+        <div class="w-full mx-auto p-24 md:px-6">
+          <div class="text-center">
+            <div
+              x-data="{}"
+              x-init="$nextTick(() => {
+                  let ul = $refs.logos;
+                  ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                  ul.nextSibling.setAttribute('aria-hidden', 'true');
+              })"
+              class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+              <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                <li>
+                  <a href="https://flume.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Flume_Digital_Marketing.png' %}" alt="Flume" target="blank"/></a>
+                </li>
+                <li>
+                  <a href="https://saltylemonkites.com/" target="blank"><img style="height:55px" src="{% static 'images/partners/Salty-Lemon-Logo_black.webp' %}" alt="Salty-Lemon" /></a>
+                </li>
+                <li>
+                  <a href="https://bettaway.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Bettaway.png' %}" alt="Bettaway" /></a>
+                </li>
+                <li>
+                  <a href="https://growthpoint.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Growthpoint-Logo.png' %}" alt="Growthpoint" /></a>
+                </li>
+                <li>
+                  <a href="https://digitlab.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Digitlab_Marketing.png' %}" alt="Digitlab" /></a>
+                </li>
+                <li>
+                  <a href="https://vitaforce.co.za/" target="blank"><img style="height:55px" src="{% static 'images/partners/Vitaforce-Logo_nobg_500px.png' %}" alt="Vitaforce" /></a>
+                </li>
+                <li>
+                  <a href="https://www.levistrauss.com/" target="blank"><img style="height:15px" src="{% static 'images/partners/Levi-Strauss-dark-Logo.png' %}" alt="Levi-Strauss" /></a>
+                </li>
+                <li>
+                  <a href="https://www.hyperiondev.com/" target="blank"><img style="height:45px" src="{% static 'images/partners/hyperion.png' %}" alt="hyperion" /></a>
+                </li>
+                <li>
+                  <a href="https://chavda.com/" target="blank"><img style="height:45px" src="{% static 'images/partners/logo_chavda_w_g.png' %}" alt="Chavda" /></a>
+                </li>
+                
+              </ul>                
             </div>
-            <!--  -->
-            <!-- End of included grid -->
           </div>
         </div>
       </div>
     </div>
-  </section>
-  {% comment %} <!-- Webdev Section --> {% endcomment %}
+  </div>
+</section>
 
 
 
-  
-{% endblock content %}
+{% comment %} <!-- Logo Carousel animation # https://codepen.io/cruip/pen/ZEVXoQP --> {% endcomment %}
+{% comment %} <!-- End: Logo Carousel animation --> {% endcomment %}
+
+{% comment %} <!-- Webdev Section --> {% endcomment %}
+<section id="webdev" class="border-10 aurora-gradient">
+<div class="min-h-screen p-4 relative flex items-center justify-start text-white">
+  <!-- <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50">
+    <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> -->
+  <div class="container mx-auto relative">
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-40">
+      <div class="md:order-1 text-left ">
+        <div>
+          <h1 class="text-slate-50 heading-medium">Project and Professional Development</h1>
+          
+        </div>
+      </div>
+      <div id="order-2_webdev" class="md:order-2 text-left md:col-span-2">
+        <div>
+          
+        </div>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50 p-fes">Frontend Consulting</button>
+            <div class="accordion-content text-slate-50 p-fes">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50 ">Digital Commerce</button>
+            <div class="accordion-content  text-slate-50 p-fes">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          {% comment %} <!--  --> {% endcomment %}
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50">Web Development</button>
+            <div class="accordion-content text-slate-50 p-fes">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          {% comment %} <!--  --> {% endcomment %}
+
+          {% comment %} <!--  --> {% endcomment %}
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50">Behavioral Marketing</button>
+            <div class="accordion-content text-slate-50 p-fes">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          {% comment %} <!--  --> {% endcomment %}
+
+          {% comment %} <!--  --> {% endcomment %}
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50">UX/UI Design</button>
+            <div class="accordion-content text-slate-50 p-fes ">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          {% comment %} <!--  --> {% endcomment %}
+
+          {% comment %} <!--  --> {% endcomment %}
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50">Cloud Migration</button>
+            <div class="accordion-content text-slate-50 p-fes">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              In the past when I started to design a website my process would go something like this: visit a site like type-scale.com or modularscale.com look at a few type scales, grab one I liked, and keep my fingers crossed that it would work out. At times I would get to the middle of a project and realize the scale I selected didn’t work for new pages like the blog or the shopping cart. At that point I would have to go back, select a different type scale and update everything I had already designed.
+      </div>
+          </div>
+          {% comment %} <!--  --> {% endcomment %}
+
+          {% comment %} <!--  --> {% endcomment %}
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-50">Frontend Garage</button>
+            <div class="accordion-content text-slate-50 p-fes">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              In the past when I started to design a website my process would go something like this: visit a site like type-scale.com or modularscale.com look at a few type scales, grab one I liked, and keep my fingers crossed that it would work out. At times I would get to the middle of a project and realize the scale I selected didn’t work for new pages like the blog or the shopping cart. At that point I would have to go back, select a different type scale and update everything I had already designed.
+            </div>
+          </div>
+          {% comment %} <!--  --> {% endcomment %}
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% comment %} <!-- Webdev Section --> {% endcomment %}
+
+{% comment %} <!-- Contact Form Section --> {% endcomment %}
+<section id="formH" class="bg-gray-900 dark:bg-white bg-fixed p-4 border-10">
+<div class="flex flex-col md:flex-row items-center justify-center mx-auto lg:py-12">
+  <div class="md:w-1/3 w-1/2 mr-0 md:mr-40 md:mb-0 ">
+    <a href="{% url 'home' %}" class="flex items-center justify-center text-gray-900 dark:text-white">
+      <img style="height: 50%;" src="{% static 'images/Fe_2.png' %}" alt="Frontend Software Engineering" />         
+    </a>
+  </div>
+  <div class="md:w-1/2 w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+      <h1 class="heading-medium text-gray-900 dark:text-white">
+        Contact Us
+      </h1>
+      <form method="post" class="space-y-4 md:space-y-6" action="#">
+        {% csrf_token %}
+        <div>
+          <label for="Name" class="block mb-2 text-sm font-medium text-white">Full Name</label>
+          {% render_field form.name type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your name" required="" %}
+        </div>
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+          {% render_field form.email type="email" name="email" id="email" placeholder="name@company.com" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" %}
+        </div>
+        <div>
+          <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+          {% render_field form.phone_number type="phone" name="phone_number" id="phone_number" placeholder="e.g +27 76 829 7070" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
+        </div>
+        <div>
+          <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+          {% render_field form.message type="text" name="message" id="message" placeholder="Your message: " class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="True" %}
+        </div>
+        <button type="submit" class="w-full text-slate-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+{% comment %} <!-- End Contact Form Section --> {% endcomment %}
+
+{% comment %} <!-- Webdev Section --> {% endcomment %}
+<section id="webdev" class="border-25">
+<div class="min-h-screen p-4 relative flex items-center justify-start text-white">
+  <!-- <video id="webdev-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover brightness-50">
+    <source src="{% static 'images/websites.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> -->
+  <div class="container mx-auto relative">
+    <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 md:gap-20">
+      <div class="md:order-1 text-left md:pb-[600px]">
+        <div>
+          <h1 class="text-slate-900 heading-medium">Project and Professional Development</h1>
+        </div>
+      </div>
+      <div id="order-2_webdev" class="md:order-2 text-left md:col-span-2">
+        <div>
+          <h1 class="text-slate-900 text-size-large pb-12">We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.</h1>
+        </div>
+        <!-- Include the provided grid here -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-900">Section 1</button>
+            <div class="accordion-content text-size-small text-slate-900">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-900">Section 2</button>
+            <div class="accordion-content text-size-small text-slate-900">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-title text-size-large text-slate-900">Section 3</button>
+            <div class="accordion-content text-size-small text-slate-900">
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+              We specialize in crafting, building, and expanding e-commerce stores for top-tier businesses located in South Africa.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% comment %} <!-- End Webdev Section --> {% endcomment %}
+
+{% endblock %}
