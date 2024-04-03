@@ -2,24 +2,23 @@
 ## Author
 👤 **Nilo Cara**
 <!-- ----------------------------------------------------------------------------
-  * @Website     Django and Bootstrap Website - Frontend Software Engineering  
-  * @framework   Django - High-level Python web framework with Bootstrap5 and Crispy Forms
+  * @Website     Django and TailwindCSS Website - Frontend Software Engineering  
+  * @framework   Django - High-level Python web framework with TailwindCSS and 
   * @author      Nilo Cara - Frontend Software Engineering
   * @copyright   Copyright (c) 2023, Nilo Cara
   * @link        https://niloc95.github.io/niloc95
-  * @since       v1.0
+  * @since       v4.03.24
   * ---------------------------------------------------------------------------- -->
 * Website: https://frontend.co.za
 * Website: https://about.frontend.co.za
 * Twitter: [@CodeCara](https://twitter.com/CodeCara)
 * GitHub: [@niloc95](https://github.com/niloc95)
 * LinkedIn: [@https:\/\/www.linkedin.com\/in\/nilo-cara\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/nilo-cara\/)
-* Date: October 2023
+* Date: April 2024
+
 ### Production Setup
 * Hosting: AWS and AWS Lightsail
-* Build - Bitnami Linux Django Package
-
-
+* Build - AMI Linux Django Package
 
 
 ## Setup
@@ -150,4 +149,13 @@ Replace YOUR_GITHUB_TOKEN with your actual GitHub personal access token. This to
 * 4.Generate a new token with the required permissions.
 * 5.Copy the token and use it in the git remote set-url command as shown above.
 * 6.Make sure to keep your personal access token secure and do not share it in your public repository or with unauthorized individuals.
+
+### Files Missing
+ * .env
+ * wsgi.py
+ * asgi.py
+ * Static files, images, videos, png, svg's...etc
+
+
+
 
