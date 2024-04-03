@@ -895,3 +895,46 @@
         </div>
     </div>
 </nav>
+
+
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+ 
+  /* background-color: #f3f4f6;  */
+  border-bottom: 1px solid #e5e7eb;
+  
+  cursor: pointer;
+}
+
+.accordion-title:focus {
+  outline: none;
+}
+
+.accordion-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  
+  /* background-color: #fff; */
+  /* border-bottom: 1px solid var(--frontend-lite-grey);  */
+  /* border-radius: 0 0 0.375rem 0.375rem; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Smooth transition for max-height */
+}
+
+.accordion-item.open .accordion-content {
+  max-height: 2500px; /* Adjust this value based on your content */
+  transition: max-height 0.3s ease; /* Slow down the opening transition */
+}
