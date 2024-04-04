@@ -130,7 +130,7 @@ def tailwind(request):
 
 def not_found_404_view(request, exception):
     context = common_context()
-    return render(request, '404.html', {}, status=404)
+    return render(request, '404.html', {}, status=404, context=context)
 
 def terms(request):
     context = common_context()
