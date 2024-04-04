@@ -2,8 +2,9 @@
 {% block title %}404 Not Found {% endblock %}
 {% load static %}
 {% block content %}
+{% load widget_tweaks %}
 
-<section class="relative z-10 bg-primary py-[120px]">
+<section class="relative z-10 bg-slate-900 py-[120px]">
     <div class="container mx-auto">
        <div class="-mx-4 flex">
           <div class="w-full px-4">
@@ -16,13 +17,13 @@
                 <h4
                    class="mb-3 text-[22px] font-semibold leading-tight text-white"
                    >
-                   Oops! That page can’t be found
+                   Oops! It seems like you've ventured into uncharted territory.
                 </h4>
-                <p class="mb-8 text-lg text-white">
-                   The page you are looking for it maybe deleted
+                <p class="mb-8 text-lg text-white p-fes">
+                  The page you're looking for seems to have taken a detour. Don't worry, though! Our team of digital explorers is on the case. In the meantime, why not journey back to our homepage and explore the wonders waiting there? Happy trails!
                 </p>
                 <a
-                   href="javascript:void(0)"
+                   href="/"
                    class="inline-block rounded-lg border border-white px-8 py-3 text-center text-base font-semibold text-white transition hover:bg-white hover:text-primary"
                    >
                 Go To Home
