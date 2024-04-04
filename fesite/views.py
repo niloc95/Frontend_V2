@@ -105,6 +105,11 @@ def home(request, id=None):
             # Create and send email
             email = EmailMultiAlternatives(subject, subject, from_email, to_email, bcc=[settings.CONTACT_EMAIL])
             email.attach_alternative(html_message, "text/html")
+
+            attachment = request.FILES.get('attachment')
+            if attachment:
+                email.attach(attachment.name, attachment.read(), attachment.content_type)
+
             email.send()
 
             # Redirect to thank-you page
@@ -122,6 +127,9 @@ def home(request, id=None):
 def tailwind(request):
     context = common_context()
     return render(request, 'pages/tailwind.html', context)
+
+def custom_404_view(request, exception):
+    return render(request, 'pages/404.html', {}, status=404)
 
 def terms(request):
     context = common_context()
@@ -155,6 +163,11 @@ def contact(request):
             # Create and send email
             email = EmailMultiAlternatives(subject, subject, from_email, to_email, bcc=[settings.CONTACT_EMAIL])
             email.attach_alternative(html_message, "text/html")
+
+            attachment = request.FILES.get('attachment')
+            if attachment:
+                email.attach(attachment.name, attachment.read(), attachment.content_type)
+            
             email.send()
 
             # Redirect to thank-you page

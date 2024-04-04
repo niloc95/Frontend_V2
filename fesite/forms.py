@@ -5,9 +5,11 @@ from django.core.exceptions import ValidationError
 import re
 
 class ContactForm(forms.ModelForm):
+    attachment = forms.FileField(required=False)
+
     class Meta:
         model = Contact
-        fields = ['name', 'email', 'phone_number', 'message']
+        fields = ['name', 'email', 'phone_number', 'message', 'attachment']
         widgets ={
             'name': forms.TextInput(attrs={'required': True}),
             'email': forms.EmailInput(attrs={'required': True}),
