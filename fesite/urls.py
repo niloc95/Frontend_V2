@@ -2,6 +2,7 @@ from django.urls import path, include
 from . import views
 from .views import contact, thank_you_page, subscribe
 from .views import RobotsTxtView
+from django.conf.urls import handler404
 from .views import custom_404_view
 
 
