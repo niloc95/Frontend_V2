@@ -3,7 +3,7 @@ from . import views
 from .views import contact, thank_you_page, subscribe
 from .views import RobotsTxtView
 from django.conf.urls import handler404
-from .views import 404_view
+from .views import not_found_404_view
 
 
 urlpatterns = [
@@ -20,4 +20,4 @@ urlpatterns = [
 
 ]
 
-handler404 = 404_view
+handler404 = not_found_404_view
