@@ -9,6 +9,7 @@ from .views import not_found_404_view
 urlpatterns = [
     path('', views.home, name='home'),
     path('tailwind/', views.tailwind, name='tailwind'),
+    # path('nof/', views.nof, name='nof'), Test page for 404 view
     path('terms/', views.terms, name='terms'),
     path('contact', views.contact, name='contact'),
     path('about/', views.about, name='about'),
