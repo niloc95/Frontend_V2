@@ -128,9 +128,9 @@ def tailwind(request):
     context = common_context()
     return render(request, 'pages/tailwind.html', context)
 
-# def nof(request):
-#     context = common_context()
-#     return render(request, '404.html', context)
+def nof(request):
+    context = common_context()
+    return render(request, '404.html', context)
 
 def not_found_404_view(request, exception):
     context = common_context()
