@@ -5,7 +5,7 @@
   * @Website     Django and TailwindCSS Website - Frontend Software Engineering  
   * @framework   Django - High-level Python web framework with TailwindCSS and 
   * @author      Nilo Cara - Frontend Software Engineering
-  * @copyright   Copyright (c) 2023, Nilo Cara
+  * @copyright   Copyright (c) 2024, Nilo Cara
   * @link        https://niloc95.github.io/niloc95
   * @since       v4.03.24
   * ---------------------------------------------------------------------------- -->

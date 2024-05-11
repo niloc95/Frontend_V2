@@ -65,7 +65,7 @@ class RobotsTxtView(View):
             with open(robots_file_path, 'r') as f:
                 robots_txt = f.read()
         except FileNotFoundError:
-            robots_txt = "User-agent: *\nDisallow: /"
+            robots_txt = "User-agent: *\nAllow: /"
 
         # Return the contents of robots.txt
         return HttpResponse(robots_txt, content_type='text/plain')
